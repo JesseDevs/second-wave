@@ -1,0 +1,113 @@
+@import 'reset.scss';
+@import 'typography.scss';
+
+
+
+:root {
+	--background: rgb(25, 25, 25);
+	--bg-opaque: rgba(46, 45, 45, 0.322);
+	--background-light: rgba(189, 184, 184, 0.724);
+	--background-dark: rgb(8, 8, 8);
+	--fade: rgba(166, 163, 163, 0.4);
+
+	--text: rgb(235, 236, 243);
+	--brand: rgb(146, 209, 164);
+	--brand-rgb: 146 209 164;
+	--white: #f4f0f0;
+	--black-rgb: 25 25 25;
+
+	--mode: rgb(235, 236, 243);
+}
+
+
+html,
+body {
+	max-width: 100vw;
+	scroll-behavior: smooth;
+	font-size: var(--text-sm);
+}
+
+body {
+	color: var(--text);
+	background: var(--background);
+	font-family: 'Poppins', sans-serif;
+	font-weight: 300;
+	line-height: 1.1;
+	font-style: normal;
+}
+
+main {
+	flex-grow: 1;
+}
+
+section {
+	overflow-x: hidden;
+}
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+*::selection {
+	background: var(--brand);
+	color: var(--background);
+}
+
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+p {
+	line-height: 1.5;
+	max-width: 53ch;
+}
+
+p a {
+	cursor: pointer;
+}
+
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+.hide {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.overflow {
+	overflow: hidden;
+}
+
+
+code {
+	font-family: monospace;
+	font-size: 1.1em;
+	color: green;
+}
+
+inner-column {
+	display: block;
+	position: relative;
+	z-index: 10;
+	max-width: 1150px;
+	margin: auto;
+	padding: 9.6rem 7rem;
+	z-index: 1;
+}
+
+@media (max-width: 768px) {
+	inner-column {
+		padding: 7.2rem 2rem;
+	}
+}
