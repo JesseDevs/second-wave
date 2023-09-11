@@ -3,9 +3,17 @@
 		<inner-column>
 			<nav class="main-menu">
 				<NuxtLink to="/"><h2 class="Logo">SecondWave Shop</h2></NuxtLink>
-				<button class="hamburger-button icon-button" @click="ui.toggleMainMenu">
-					<Icon name="grommet-icons:menu" size="21" color="var(--text)" />
-				</button>
+				<div class="buttons">
+					<div class="icon-button" @click="ui.toggleMainMenu">
+						<Icon name="ion:search-sharp" size="21" color="var(--text)" />
+					</div>
+					<div class="icon-button" @click="ui.toggleMainMenu">
+						<Icon name="ph:bag-simple-bold" size="21" color="var(--text)" />
+					</div>
+					<button class="hamburger-button icon-button" @click="ui.toggleMainMenu">
+						<Icon name="grommet-icons:menu" size="21" color="var(--text)" />
+					</button>
+				</div>
 			</nav>
 		</inner-column>
 	</header>
@@ -13,7 +21,6 @@
 
 <script setup>
 	import { useInterfaceStore } from '~/stores/interface';
-
 	const ui = useInterfaceStore();
 </script>
 
@@ -22,8 +29,15 @@
 		position: sticky;
 		top: 0;
 		z-index: 50;
-		background-color: var(--background);
-		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+		box-shadow: 0 0 5rem var(--color-black-20);
+		border-bottom-left-radius: 2rem;
+		border-bottom-right-radius: 2rem;
+
+		border: 1px solid hsla(var(--color-secondary-hsl), 0.2);
+		border-top: none;
+		backdrop-filter: saturate(180%) blur(1rem);
+		background-color: var(--color-primary-50);
+
 		inner-column {
 			padding: 1.5rem 2rem;
 
@@ -32,6 +46,7 @@
 				flex-direction: row;
 				align-items: center;
 				justify-content: space-between;
+				padding: 0 1rem;
 
 				.icon-button {
 					&:hover {
@@ -40,6 +55,11 @@
 				}
 			}
 		}
+	}
+
+	div.buttons {
+		display: flex;
+		gap: 5px;
 	}
 
 	.icon-button {

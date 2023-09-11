@@ -1,7 +1,7 @@
 <template>
-	<site-footer>
+	<footer class="site-footer">
 		<inner-column> This is a footer. </inner-column>
-	</site-footer>
+	</footer>
 </template>
 
 <script setup>

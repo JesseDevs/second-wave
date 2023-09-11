@@ -1,8 +1,15 @@
 <template>
 	<div>
 		<SiteNav />
+		<ModalContainer>
+			<ModalMenu />
+		</ModalContainer>
 		<main>
-			<slot />
+			<section>
+				<inner-column>
+					<slot />
+				</inner-column>
+			</section>
 		</main>
 		<SiteFooter />
 	</div>
