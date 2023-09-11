@@ -23,6 +23,16 @@
 </script>
 
 <style lang="scss" scoped>
+	// .modal-enter-active,
+	// .modal-leave-active {
+	// 	transition: all 0.25s ease;
+	// }
+
+	// .modal-enter-from,
+	// .modal-leave-to {
+	// 	opacity: 0;
+	// 	transform: scale(1.1);
+	// }
 	.modal-container {
 		position: fixed;
 		overflow-y: auto;
@@ -37,8 +47,8 @@
 		background: var(--color-black-60);
 		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 		backdrop-filter: blur(0.3px);
-		transition: left 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955),
-			backdrop-filter 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955), opacity 0.3s ease-in-out;
+		transition: backdrop-filter 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955),
+			opacity 0.3s ease-in-out;
 		backdrop-filter: blur(5px);
 		opacity: 0;
 		pointer-events: none;
