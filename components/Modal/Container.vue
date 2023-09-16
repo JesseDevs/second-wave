@@ -1,8 +1,11 @@
 <template>
 	<ClientOnly>
 		<Teleport to="footer">
-			<div @click="handleModalContainerClick" :class="`modal-container ${ui.menuClass}`">
-				<button class="icon-button close-x" @click="ui.closeMenu">
+			<div
+				@click="handleModalContainerClick"
+				:class="['modal-container', ui.modal ? 'open' : '']"
+			>
+				<button class="icon-button close-x" @click="ui.forceModalClose">
 					<Icon name="mingcute:close-fill" size="21" />
 				</button>
 				<slot />
@@ -17,7 +20,7 @@
 
 	const handleModalContainerClick = (event) => {
 		if (!event.target.closest('menu-modal')) {
-			ui.closeMenu();
+			ui.forceModalClose();
 		}
 	};
 </script>
@@ -66,7 +69,7 @@
 		}
 	}
 
-	.modal-container.menu-open {
+	.modal-container.open {
 		backdrop-filter: blur(3px);
 		opacity: 1;
 		pointer-events: all;

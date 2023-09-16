@@ -2,7 +2,8 @@
 	<div>
 		<SiteNav />
 		<ModalContainer>
-			<ModalMenu />
+			<ModalMenu v-if="ui.mainMenuOpen" />
+			<ModalSearch v-if="ui.searchBar" />
 		</ModalContainer>
 		<main>
 			<section>
@@ -15,7 +16,10 @@
 	</div>
 </template>
 
-<script setup></script>
+<script setup>
+	import { useInterfaceStore } from '~/stores/interface';
+	const ui = useInterfaceStore();
+</script>
 
 <style lang="scss" scoped>
 	div {

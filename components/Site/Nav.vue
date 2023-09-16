@@ -2,12 +2,12 @@
 	<header class="main-tool-bar site-header">
 		<inner-column>
 			<nav class="main-menu">
-				<NuxtLink to="/"><h2 class="Logo">SecondWave Shop</h2></NuxtLink>
+				<NuxtLink to="/"><h2 class="logo">SecondWave</h2></NuxtLink>
 				<div class="buttons">
-					<div class="icon-button" @click="ui.toggleMainMenu">
+					<div class="icon-button" @click="ui.toggleSearchBar">
 						<Icon name="ion:search-sharp" size="21" color="var(--text)" />
 					</div>
-					<div class="icon-button" @click="ui.toggleMainMenu">
+					<div class="icon-button">
 						<Icon name="ph:bag-simple-bold" size="21" color="var(--text)" />
 					</div>
 					<button class="hamburger-button icon-button" @click="ui.toggleMainMenu">
@@ -55,6 +55,11 @@
 				}
 			}
 		}
+	}
+
+	h2.logo {
+		font-weight: 500;
+		text-transform: uppercase;
 	}
 
 	div.buttons {
