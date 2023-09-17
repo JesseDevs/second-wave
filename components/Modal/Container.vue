@@ -8,7 +8,11 @@
 				<button class="icon-button close-x" @click="ui.forceModalClose">
 					<Icon name="mingcute:close-fill" size="21" />
 				</button>
-				<slot />
+				<menu-modal>
+					<div class="modal-content">
+						<slot />
+					</div>
+				</menu-modal>
 			</div>
 		</Teleport>
 	</ClientOnly>
@@ -26,16 +30,6 @@
 </script>
 
 <style lang="scss" scoped>
-	// .modal-enter-active,
-	// .modal-leave-active {
-	// 	transition: all 0.25s ease;
-	// }
-
-	// .modal-enter-from,
-	// .modal-leave-to {
-	// 	opacity: 0;
-	// 	transform: scale(1.1);
-	// }
 	.modal-container {
 		position: fixed;
 		overflow-y: auto;
@@ -73,5 +67,31 @@
 		backdrop-filter: blur(3px);
 		opacity: 1;
 		pointer-events: all;
+
+		menu-modal {
+			bottom: 0;
+		}
+	}
+
+	menu-modal {
+		display: block;
+		overflow: hidden;
+		width: 100vw;
+		max-width: 800px;
+		padding: 4rem 3rem;
+		pointer-events: all;
+		position: fixed;
+		bottom: -100%;
+
+		backdrop-filter: saturate(180%) blur(1.5rem);
+		background-color: var(--color-primary-50);
+		background: var(--color-primary-50);
+		border: 1px solid var(--color-secondary-20);
+		border-radius: 2rem 2rem 0 0;
+		height: 90vh;
+		height: calc(var(7.62px, 1vh) * 90);
+		transition: 0.3s bottom ease;
+		// transform: translateY(100%);
+		// width: 90vw;
 	}
 </style>

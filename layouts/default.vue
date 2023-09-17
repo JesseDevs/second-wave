@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="app-container">
 		<SiteNav />
 		<ModalContainer>
 			<ModalMenu v-if="ui.mainMenuOpen" />
@@ -22,7 +22,7 @@
 </script>
 
 <style lang="scss" scoped>
-	div {
+	.app-container {
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;

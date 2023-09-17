@@ -59,7 +59,6 @@
 
 	h2.logo {
 		font-weight: 500;
-		text-transform: uppercase;
 	}
 
 	div.buttons {
