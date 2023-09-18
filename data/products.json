@@ -24,18 +24,5 @@
 		"color": "black",
 		"gender": "female",
 		"size": "4"
-	},
-	{
-		"id": 4,
-		"url": "product-image/adidas-samba.avif",
-		"name": "Adidas Sambas",
-		"price": 100,
-		"brand": "Adidas",
-		"type": "Shoes",
-		"condition": "New",
-		"description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis odio et laboriosam!",
-		"color": "white",
-		"gender": "male",
-		"size": "11"
 	}
 ]

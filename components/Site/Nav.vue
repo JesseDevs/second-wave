@@ -4,6 +4,19 @@
 			<nav class="main-menu">
 				<NuxtLink to="/"><h2 class="logo">SecondWave</h2></NuxtLink>
 				<div class="buttons">
+					<div class="profile-options" v-if="user">
+						<NuxtLink to="/profile/listings" class="icon-button">
+							<Icon name="material-symbols:person" size="21" color="var(--text)" />
+						</NuxtLink>
+						<button class="logout" @click="logout">Logout</button>
+					</div>
+					<NuxtLink to="/login" class="icon-button" v-else>
+						<Icon
+							name="material-symbols:person-add-rounded"
+							size="21"
+							color="var(--text)"
+						/>
+					</NuxtLink>
 					<div class="icon-button" @click="ui.toggleSearchBar">
 						<Icon name="ion:search-sharp" size="21" color="var(--text)" />
 					</div>
@@ -22,6 +35,18 @@
 <script setup>
 	import { useInterfaceStore } from '~/stores/interface';
 	const ui = useInterfaceStore();
+
+	const user = useSupabaseUser();
+	const supabase = useSupabaseClient();
+	const logout = () => {
+		const { error } = supabase.auth.signOut();
+		if (error) {
+			console.log(error);
+		}
+
+		user.value = null;
+		navigateTo('/');
+	};
 </script>
 
 <style lang="scss">

@@ -1,6 +1,8 @@
 <template>
 	<div>
-		{{ route.params }}
+		<ProductsCard v-for="product in products" :key="product.id" :product="product" />
+
+		{{ products }}
 	</div>
 </template>
 
@@ -8,6 +10,7 @@
 	const route = useRoute();
 	const { capitalizeWords } = useUtilities();
 
+	const products = useData();
 	useHead({
 		title: `
 			SecondWave | ${capitalizeWords(route.params.item)}
