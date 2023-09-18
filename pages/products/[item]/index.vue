@@ -10,7 +10,7 @@
 
 	useHead({
 		title: `
-			${capitalizeWords(route.params.item)}
+			SecondWave | ${capitalizeWords(route.params.item)}
 		 in products.`,
 	});
 </script>

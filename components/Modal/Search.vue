@@ -11,7 +11,9 @@
 			<h4>Recent Searches</h4>
 			<ul>
 				<li v-for="item in recentSearches">
-					<p class="small-voice">{{ capitalizeWords(item) }}</p>
+					<p class="small-voice" @click="doRecentSearch(item)">
+						{{ capitalizeWords(item) }}
+					</p>
 				</li>
 			</ul>
 		</div>
@@ -32,6 +34,11 @@
 	const recentSearches = computed(() => {
 		return JSON.parse(localStorage.getItem('recentSearches') || '[]');
 	});
+
+	const doRecentSearch = (item) => {
+		navigateTo(`/products/${item}`);
+		ui.forceModalClose();
+	};
 
 	const handleSearch = () => {
 		const newSearch = formattedItem.value;
@@ -60,17 +67,30 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
-		padding-top: 2rem;
+		padding-top: 3rem;
+
 		h4 {
-			text-transform: uppercase;
 			font-weight: 500;
+			text-transform: uppercase;
 			letter-spacing: -0.01em;
 		}
 
 		ul {
 			display: flex;
 			flex-direction: column;
-			gap: 5px;
+			font-family: 'JetBrains Mono', monospace;
+			padding-bottom: 2rem;
+			border-bottom: 1px solid var(--color-secondary-20);
+			p {
+				cursor: pointer;
+				padding: 5px 10px;
+				border-radius: 5px;
+				transition: background-color 0.3s ease;
+
+				&:hover {
+					background-color: rgb(83, 82, 82);
+				}
+			}
 		}
 	}
 	search-bar {
