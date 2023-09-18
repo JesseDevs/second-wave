@@ -2,7 +2,11 @@
 	<div class="landing">Hero landing</div>
 </template>
 
-<script setup></script>
+<script setup>
+	useHead({
+		title: `SecondWave | Home`,
+	});
+</script>
 
 <style lang="scss" scoped>
 	.landing {

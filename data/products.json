@@ -1,0 +1,41 @@
+[
+	{
+		"id": 1,
+		"name": "Nike Tech Fleece Jackets",
+		"price": 80,
+		"brand": "Nike",
+		"url": "product-image/nike-fleece.webp",
+		"type": "jacket",
+		"condition": "Like new",
+		"description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis odio et laboriosam!",
+		"color": "orange",
+		"gender": "male",
+		"size": "M"
+	},
+	{
+		"id": 2,
+		"url": "product-image/lulu-align.webp",
+		"name": "Lululemon Align Leggings",
+		"price": 60,
+		"brand": "Lululemon",
+		"type": "bottoms",
+		"condition": "Used",
+		"description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis odio et laboriosam!",
+		"color": "black",
+		"gender": "female",
+		"size": "4"
+	},
+	{
+		"id": 4,
+		"url": "product-image/adidas-samba.avif",
+		"name": "Adidas Sambas",
+		"price": 100,
+		"brand": "Adidas",
+		"type": "Shoes",
+		"condition": "New",
+		"description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis odio et laboriosam!",
+		"color": "white",
+		"gender": "male",
+		"size": "11"
+	}
+]
