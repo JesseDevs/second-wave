@@ -8,6 +8,7 @@ export default defineNuxtConfig({
 		'@vueuse/motion/nuxt',
 		'@vueuse/nuxt',
 		'@nuxt/image-edge',
+		'@nuxtjs/supabase',
 	],
 	vue: {
 		compilerOptions: {
@@ -34,6 +35,12 @@ export default defineNuxtConfig({
 			},
 		},
 	},
-
+	supabase: {
+		redirectOptions: {
+			login: '/login',
+			callback: '/',
+			exclude: ['/'],
+		},
+	},
 	components: true,
 });
