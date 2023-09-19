@@ -31,10 +31,6 @@
 			Already have an account?
 			<span>Log In</span>
 		</p>
-
-		<code v-if="user">
-			<pre>{{ user }}</pre>
-		</code>
 	</login-page>
 </template>
 

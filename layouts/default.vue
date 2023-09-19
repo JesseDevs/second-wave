@@ -4,6 +4,7 @@
 		<ModalContainer>
 			<ModalMenu v-if="ui.mainMenuOpen" />
 			<ModalSearch v-if="ui.searchBar" />
+			<ModalProfile v-if="ui.profileModal" />
 		</ModalContainer>
 		<main>
 			<section>

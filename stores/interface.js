@@ -9,6 +9,10 @@ export const useInterfaceStore = defineStore('interface', function () {
 		if (searchBar.value) {
 			return true;
 		}
+
+		if (profileModal.value) {
+			return true;
+		}
 		return false;
 	});
 
@@ -16,21 +20,21 @@ export const useInterfaceStore = defineStore('interface', function () {
 	const toggleMainMenu = () => {
 		mainMenuOpen.value = !mainMenuOpen.value;
 	};
-	const closeMenu = () => {
-		mainMenuOpen.value = false;
-	};
 
 	const searchBar = ref(false);
 	const toggleSearchBar = () => {
 		searchBar.value = !searchBar.value;
 	};
-	const closeSearchBar = () => {
-		searchBar.value = false;
+
+	const profileModal = ref(false);
+	const toggleProfileModal = () => {
+		profileModal.value = !profileModal.value;
 	};
 
 	const forceModalClose = () => {
 		mainMenuOpen.value = false;
 		searchBar.value = false;
+		profileModal.value = false;
 	};
 
 	useHead({
@@ -46,10 +50,10 @@ export const useInterfaceStore = defineStore('interface', function () {
 		modal,
 		mainMenuOpen,
 		toggleMainMenu,
-		closeMenu,
 		searchBar,
 		toggleSearchBar,
-		closeSearchBar,
+		profileModal,
+		toggleProfileModal,
 		forceModalClose,
 	};
 });
