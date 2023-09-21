@@ -17,7 +17,7 @@
 					<div class="icon-button" @click="ui.toggleSearchBar">
 						<Icon name="ion:search-sharp" size="21" color="var(--text)" />
 					</div>
-					<div class="icon-button">
+					<div v-if="user" class="icon-button">
 						<Icon name="ph:bag-simple-bold" size="21" color="var(--text)" />
 					</div>
 					<button class="hamburger-button icon-button" @click="ui.toggleMainMenu">

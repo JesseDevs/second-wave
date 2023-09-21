@@ -5,17 +5,17 @@
 			<article>
 				<h4>MEN</h4>
 				<ul>
-					<li>Tops</li>
-					<li>Bottoms</li>
-					<li>Accessories</li>
+					<li><p>Tops</p></li>
+					<li><p>Bottoms</p></li>
+					<li><p>Accessories</p></li>
 				</ul>
 			</article>
 			<article>
 				<h4>WOMEN</h4>
 				<ul>
-					<li>Tops</li>
-					<li>Bottoms</li>
-					<li>Accessories</li>
+					<li><p>Tops</p></li>
+					<li><p>Bottoms</p></li>
+					<li><p>Accessories</p></li>
 				</ul>
 			</article>
 		</article-grid>
@@ -31,6 +31,7 @@
 		padding: 1.5rem;
 		position: relative;
 		font-size: var(--text-xs);
+		background: var(--color-black-10);
 
 		* {
 			font-size: inherit;
@@ -45,6 +46,7 @@
 			background: var(--color-black-10);
 			font-weight: 600;
 			text-transform: uppercase;
+			font-size: var(--text-sm);
 		}
 
 		article-grid {
@@ -75,6 +77,16 @@
 				display: flex;
 				flex-direction: column;
 				gap: 5px;
+				p {
+					cursor: pointer;
+					padding: 5px 10px;
+					border-radius: 5px;
+					transition: background-color 0.3s ease;
+
+					&:hover {
+						background-color: rgb(83, 82, 82);
+					}
+				}
 			}
 		}
 	}
