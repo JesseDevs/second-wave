@@ -1,10 +1,10 @@
 [
 	{
 		"id": 1,
-		"name": "Nike Tech Fleece Jackets",
+		"name": "Nike Tech Fleece Jacket",
 		"price": 80,
 		"brand": "Nike",
-		"url": "product-image/nike-fleece.webp",
+		"image": "product-image/nike-fleece.webp",
 		"type": "jacket",
 		"condition": "Like new",
 		"description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis odio et laboriosam!",
@@ -14,11 +14,11 @@
 	},
 	{
 		"id": 2,
-		"url": "product-image/lulu-align.webp",
+		"image": "product-image/lulu-align.webp",
 		"name": "Lululemon Align Leggings",
 		"price": 60,
 		"brand": "Lululemon",
-		"type": "bottoms",
+		"type": "bottom",
 		"condition": "Used",
 		"description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis odio et laboriosam!",
 		"color": "black",
