@@ -1,5 +1,6 @@
 <template>
-	<detail-page v-if="car">
+	<detail-page v-if="product">
+		{{ product.name }}
 		<!-- <CarDetail :car="car" /> -->
 		<!--
 		<article class="detail-attr" v-for="feature in car.features" :key="feature"> -->
@@ -20,14 +21,14 @@
 </template>
 
 <script setup>
-	// const route = useRoute();
-	// const { capitalizeWords } = useUtilities();
+	const route = useRoute();
+	const { capitalizeWords } = useUtilities();
 
-	// const { data: car } = await useFetchCar(route.params.id);
+	const { data: product } = await useFetchProduct(route.params.id);
 
-	// useHead({
-	// 	title: capitalizeWords(route.params.name),
-	// });
+	useHead({
+		title: capitalizeWords(route.params.name),
+	});
 </script>
 
 <style lang="scss" scoped></style>

@@ -1,8 +1,13 @@
 <template>
-	<div>
+	<product-card>
+		<NuxtLink :to="`/product/${product.name}-${product.id}`">
+			<picture>
+				<NuxtImg :src="`${product.image}`" alt="p-image" />
+			</picture>
+		</NuxtLink>
 		<p>{{ product.name }}</p>
 		<p>{{ product.id }}</p>
-	</div>
+	</product-card>
 </template>
 
 <script setup>
@@ -11,4 +16,9 @@
 	});
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+	product-card {
+		display: flex;
+		flex-direction: column;
+	}
+</style>
