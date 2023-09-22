@@ -3,5 +3,9 @@ export const useUtilities = () => {
 		return str.replace(/\b\w/g, (char) => char.toUpperCase());
 	}
 
-	return { capitalizeWords };
+	function convertToSlug(text) {
+		return text.toLowerCase().replace(/ /g, '-');
+	}
+
+	return { capitalizeWords, convertToSlug };
 };

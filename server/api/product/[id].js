@@ -1,4 +1,4 @@
-import products from '@/data/products.json';
+import products from '@/data/collection.json';
 export default defineEventHandler((event) => {
 	const { id } = event.context.params;
 

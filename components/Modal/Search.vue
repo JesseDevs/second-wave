@@ -34,7 +34,7 @@
 	});
 
 	const doRecentSearch = (item) => {
-		navigateTo(`/products/${item}`);
+		navigateTo(`/collection/${item}`);
 		ui.forceModalClose();
 	};
 
@@ -56,7 +56,7 @@
 			return (searchErr.value = true);
 		}
 
-		navigateTo(`/products/${formattedItem.value}`);
+		navigateTo(`/collection/${formattedItem.value}`);
 	};
 </script>
 

@@ -1,6 +1,6 @@
 <template>
 	<product-card>
-		<NuxtLink :to="`/product/${product.name}-${product.id}`">
+		<NuxtLink :to="`/product/${product.slug}-${product.id}`">
 			<picture>
 				<NuxtImg :src="`${product.image}`" alt="p-image" />
 			</picture>
