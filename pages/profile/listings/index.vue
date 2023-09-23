@@ -17,10 +17,10 @@
 
 <script setup>
 	const user = useSupabaseUser();
-	const { data: listings } = await useFetch(`/api/car/listings/user/${user.value.id}`);
+	const { data: listings } = await useFetch(`/api/product/listings/user/${user.value.id}`);
 
 	const handleDelete = async (id) => {
-		await $fetch(`/api/car/listings/${id}`, {
+		await $fetch(`/api/product/listings/${id}`, {
 			method: 'delete',
 		});
 		listings.value = listings.value.filter((listing) => listing.id !== id);
@@ -46,12 +46,6 @@
 				background-color: #60a5fa;
 				cursor: pointer;
 			}
-		}
-		div + div {
-			padding: 0.75rem;
-			margin-top: 1.25rem;
-			border-radius: 0.25rem;
-			box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 		}
 	}
 </style>

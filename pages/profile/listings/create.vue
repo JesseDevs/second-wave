@@ -126,7 +126,7 @@
 		};
 
 		try {
-			const response = await $fetch('/api/car/listings', {
+			const response = await $fetch('/api/product/listings', {
 				method: 'post',
 				body,
 			});

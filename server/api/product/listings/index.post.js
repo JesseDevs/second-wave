@@ -9,7 +9,6 @@ const schema = Joi.object({
 	description: Joi.string().required().min(20),
 	color: Joi.string().required(),
 	type: Joi.string().required(),
-	condition: Joi.string().required(),
 	brand: Joi.string().required(),
 	gender: Joi.string().required().max(1),
 	size: Joi.string().required(),
@@ -30,19 +29,7 @@ export default defineEventHandler(async (event) => {
 		});
 	}
 
-	const {
-		image,
-		name,
-		color,
-		price,
-		brand,
-		description,
-		listerId,
-		gender,
-		condition,
-		type,
-		size,
-	} = body;
+	const { image, name, color, price, brand, description, listerId, gender, type, size } = body;
 
 	const product = await prisma.product.create({
 		data: {
@@ -55,7 +42,6 @@ export default defineEventHandler(async (event) => {
 			description,
 			listerId,
 			gender,
-			condition,
 			type,
 			size,
 		},

@@ -1,9 +1,9 @@
 <template>
 	<detail-page v-if="product">
 		{{ product.name }}
-		<!-- <CarDetail :car="car" /> -->
+		<!-- <ProductDetail :product="product" /> -->
 		<!--
-		<article class="detail-attr" v-for="feature in car.features" :key="feature"> -->
+		<article class="detail-attr" v-for="feature in product.features" :key="feature"> -->
 		<article>
 			<p>✔</p>
 			<p>

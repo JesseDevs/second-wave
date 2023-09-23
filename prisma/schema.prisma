@@ -22,7 +22,6 @@ model Product {
     description String
     type        String
     gender      String
-    condition   String
     listerId    String
     messages    Message[]
 }

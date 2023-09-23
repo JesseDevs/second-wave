@@ -1,5 +1,5 @@
 <template>
-	<div v-if="products">
+	<div v-if="products && products.length > 0">
 		<div v-if="loading" class="loading-container">
 			<Icon name="line-md:loading-twotone-loop" size="100" />
 		</div>
