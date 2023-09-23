@@ -12,7 +12,7 @@ const schema = Joi.object({
 	condition: Joi.string().required(),
 	brand: Joi.string().required(),
 	gender: Joi.string().required().max(1),
-	size: Joi.string().required().max(2),
+	size: Joi.string().required(),
 	image: Joi.string().required(),
 	listerId: Joi.string().required(),
 	price: Joi.number().required().min(0),
