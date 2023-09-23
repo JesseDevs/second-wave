@@ -16,6 +16,7 @@ sans-serif; */
 :root {
 	font-size: 62.5%;
 
+	--text-xxs: 1.4rem;
 	--text-xs: 1.6rem;
 	--text-sm: 1.8rem;
 	--text-md: 2.2rem;
@@ -24,29 +25,29 @@ sans-serif; */
 	--text-2xl: 9.6rem;
 }
 
-.roar-voice {
-	font-size: var(--step-5);
-	text-transform: uppercase;
-	font-weight: 900;
-	line-height: .9;
-	letter-spacing: -.1px;
-}
+// .roar-voice {
+// 	font-size: var(--step-5);
+// 	text-transform: uppercase;
+// 	font-weight: 900;
+// 	line-height: .9;
+// 	letter-spacing: -.1px;
+// }
 
 .loud-voice {
-	font-size: var(--step-4);
+	font-size: var(--text-2xl);
 	font-weight: 700;
 }
 
 .attention-voice {
-	font-size: var(--step-3);
+	font-size: var(--text-xl);
 }
 
 .chant-voice {
-	font-size: var(--step-2);
+	font-size: var(--text-lg);
 }
 
 .strict-voice {
-	font-size: var(--step-1);
+	font-size: var(--text-md);
 	font-weight: 400;
 }
 
@@ -61,6 +62,10 @@ button {
 small,
 .small-voice {
 	font-size: var(--text-xs);
+}
+
+.tiny-voice {
+	font-size: var(--text-xxs);
 }
 
 :is(.calm-voice, p, li) em {

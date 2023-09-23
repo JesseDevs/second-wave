@@ -1,17 +1,19 @@
 <template>
 	<profile-page>
-		<div>
-			<h1>My Listings</h1>
-			<NuxtLink to="/profile/listings/create">+</NuxtLink>
+		<div class="profile-header">
+			<h1 class="strict-voice">My Listings</h1>
+			<NuxtLink to="/profile/listings/create">
+				<Icon name="emojione-monotone:heavy-plus-sign" size="19" />
+			</NuxtLink>
 		</div>
-		<div>
+		<article-grid>
 			<ProductListing
 				v-for="listing in listings"
 				:key="listing.id"
 				:listing="listing"
 				@delete-click="handleDelete"
 			/>
-		</div>
+		</article-grid>
 	</profile-page>
 </template>
 
@@ -31,9 +33,9 @@
 	profile-page {
 		display: block;
 		width: 100%;
-		> div {
+
+		.profile-header {
 			display: flex;
-			margin-top: 6rem;
 			justify-content: space-between;
 			align-items: center;
 			a {
@@ -41,11 +43,23 @@
 				justify-content: center;
 				align-items: center;
 				border-radius: 9999px;
+				padding: 1rem;
 				font-weight: 700;
 				color: #ffffff;
 				background-color: #60a5fa;
 				cursor: pointer;
+				transition: background-color 0.3s ease;
+
+				&:hover {
+					background-color: #2168c0;
+				}
 			}
+		}
+		article-grid {
+			display: flex;
+			margin-top: 6rem;
+			justify-content: space-between;
+			align-items: center;
 		}
 	}
 </style>

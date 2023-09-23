@@ -13,7 +13,7 @@ const schema = Joi.object({
 		.length(10)
 		.pattern(/^[0-9]+$/),
 	name: Joi.string().required(),
-	message: Joi.string().min(20).required(),
+	text: Joi.string().min(20).required(),
 });
 
 export default defineEventHandler(async (event) => {
@@ -28,11 +28,11 @@ export default defineEventHandler(async (event) => {
 		});
 	}
 
-	const { message, email, phone, name } = body;
+	const { text, email, phone, name } = body;
 
 	return await prisma.message.create({
 		data: {
-			message,
+			text,
 			email,
 			phone,
 			name,
