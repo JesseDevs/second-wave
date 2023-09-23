@@ -31,7 +31,7 @@ model Message {
     name      String
     email     String
     phone     String
-    message   String
+    text      String
     listingId Int
     listing   Product @relation(fields: [listingId], references: [id], onDelete: Cascade)
 }

@@ -1,5 +1,5 @@
 <template>
-	<listing-view>
+	<listing-card>
 		<picture>
 			<NuxtImg
 				:src="`${config.public.supabase.url}/storage/v1/object/public/images/${listing.image}`"
@@ -7,16 +7,16 @@
 			/>
 		</picture>
 
-		<text-content>
-			<h1>{{ listing.name }}</h1>
-			<p>${{ listing.price }}</p>
+		<text-content class="small-voice">
+			<h3>${{ listing.price }}</h3>
+			<p>{{ listing.name }}</p>
 		</text-content>
 		<listing-buttons>
 			<NuxtLink :to="`/profile/listings/view/${listing.id}`">View</NuxtLink>
 			<span class="vline"></span>
 			<p @click="emits('deleteClick', listing.id)">Delete</p>
 		</listing-buttons>
-	</listing-view>
+	</listing-card>
 </template>
 
 <script setup>
@@ -30,7 +30,7 @@
 </script>
 
 <style lang="scss" scoped>
-	listing-view {
+	listing-card {
 		display: grid;
 		grid-template-columns: 10rem auto;
 		width: 100%;
@@ -46,8 +46,19 @@
 			border-radius: 1rem;
 			overflow: hidden;
 		}
-		text-content p {
+		text-content h3 {
 			color: #60a5fa;
+			font-weight: 500;
+		}
+
+		text-content {
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+			padding-top: 3rem;
+			* {
+				font-size: inherit;
+			}
 		}
 	}
 
@@ -69,18 +80,10 @@
 			font-weight: 500;
 		}
 
-		&:before {
-			position: absolute;
-
-			background-color: var(--color-secondary-20);
-			width: 5px;
-
-			min-height: 100%;
-		}
-
 		a {
 			display: block;
 			border-bottom-left-radius: 1rem;
+			border-right: 1px solid var(--color-secondary-20);
 
 			&:hover {
 				background-color: #60a5fa;
