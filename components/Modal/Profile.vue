@@ -77,7 +77,7 @@
 				display: block;
 				cursor: pointer;
 				width: 100%;
-				padding: 5px 10px;
+				padding: 10px 10px;
 				border-radius: 5px;
 				transition: background-color 0.3s ease;
 

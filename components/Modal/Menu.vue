@@ -1,21 +1,26 @@
 <template>
 	<div class="products">
-		<span>Products</span>
+		<h2 class="strict-voice">Collection</h2>
 		<article-grid>
-			<article>
+			<aside class="product-headers">
 				<h4>MEN</h4>
-				<ul>
-					<li><p>Tops</p></li>
-					<li><p>Bottoms</p></li>
-					<li><p>Accessories</p></li>
-				</ul>
-			</article>
-			<article>
 				<h4>WOMEN</h4>
+			</aside>
+
+			<article>
 				<ul>
-					<li><p>Tops</p></li>
-					<li><p>Bottoms</p></li>
-					<li><p>Accessories</p></li>
+					<li><p class="tiny-voice">Tops</p></li>
+					<li><p class="tiny-voice">Bottoms</p></li>
+					<li><p class="tiny-voice">Accessories</p></li>
+					<li><p class="tiny-voice">Jackets</p></li>
+					<li><p class="tiny-voice">Outerwear</p></li>
+				</ul>
+				<ul>
+					<li><p class="tiny-voice">Tops</p></li>
+					<li><p class="tiny-voice">Bottoms</p></li>
+					<li><p class="tiny-voice">Accessories</p></li>
+					<li><p class="tiny-voice">Jackets</p></li>
+					<li><p class="tiny-voice">Outerwear</p></li>
 				</ul>
 			</article>
 		</article-grid>
@@ -26,50 +31,36 @@
 
 <style lang="scss" scoped>
 	.products {
-		border: 1px solid var(--color-secondary-20);
-		border-radius: 2rem;
-		padding: 1.5rem;
-		position: relative;
-		font-size: var(--text-xs);
-		background: var(--color-black-10);
-
-		* {
-			font-size: inherit;
-		}
-		span {
-			position: absolute;
-			top: -1rem;
-			left: 2rem;
-			padding-left: 10px;
-			padding-right: 10px;
-			backdrop-filter: saturate(180%) blur(1.5rem);
-			background: var(--color-black-10);
-			font-weight: 600;
-			text-transform: uppercase;
-			font-size: var(--text-sm);
-		}
+		background: var(--color-black-20);
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
 
 		article-grid {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
+			display: flex;
+			flex-direction: column;
 			padding: 1.5rem 0;
 			color: var(--color-secondary-80);
+			font-size: var(--text-xs);
+			border: 1px solid var(--color-secondary-20);
+			border-radius: 1rem;
+			padding: 1.5rem;
 
-			h4 {
-				text-transform: uppercase;
-				font-weight: 500;
-				padding-bottom: 1rem;
+			aside.product-headers {
+				display: flex;
+				width: 100%;
 				border-bottom: 1px solid var(--color-secondary-20);
+				h4 {
+					width: 100%;
+					text-transform: uppercase;
+					font-weight: 500;
+					padding-bottom: 1rem;
+				}
 			}
 
-			article + article {
-				ul {
-					padding-left: 1rem;
-				}
-				h4 {
-					padding-left: 1rem;
-					border-left: 1px solid var(--color-secondary-20);
-				}
+			article {
+				display: flex;
+				gap: 10px;
 			}
 
 			ul {
