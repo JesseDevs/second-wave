@@ -140,6 +140,11 @@ code {
 	top: 0;
 }
 
+text-content {
+	display: block;
+	width: 100%;
+}
+
 inner-column {
 	display: block;
 	position: relative;

@@ -59,7 +59,6 @@
 				flex-direction: row;
 				align-items: center;
 				justify-content: space-between;
-				padding: 0 1rem;
 
 				.icon-button {
 					&:hover {
@@ -76,7 +75,7 @@
 
 	div.buttons {
 		display: flex;
-		gap: 5px;
+		gap: 1vw;
 	}
 
 	.icon-button {

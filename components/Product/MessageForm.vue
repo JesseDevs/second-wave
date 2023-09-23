@@ -19,7 +19,7 @@
 
 	const onSubmit = async () => {
 		try {
-			const response = await $fetch(`/api/car/listings/${route.params.id}/message`, {
+			const response = await $fetch(`/api/product/listings/${route.params.id}/message`, {
 				method: 'post',
 				body: message.value,
 			});

@@ -1,24 +1,20 @@
 <template>
 	<ad-image>
 		<label for="">Image</label>
-		<form>
-			<div class="form-group">
-				<form-field>
-					<input type="file" name="" id="" accept="image/*" @change="onImageUpload" />
-					<span>Browse File</span>
-				</form-field>
-				<article v-if="image.preview">
-					<picture>
-						<NuxtImg :src="image.preview" alt="" />
-					</picture>
-				</article>
-			</div>
-		</form>
+		<form-field>
+			<input type="file" name="" id="" accept="image/*" @change="onImageUpload" />
+			<span>Browse File</span>
+		</form-field>
+		<article v-if="image.preview">
+			<picture>
+				<NuxtImg :src="image.preview" alt="image-upload-preview" />
+			</picture>
+		</article>
 	</ad-image>
 </template>
 
 <script setup>
-	const image = useState('carImage', () => {
+	const image = useState('productImage', () => {
 		return {
 			preview: null,
 			image: null,

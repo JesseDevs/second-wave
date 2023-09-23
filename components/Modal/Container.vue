@@ -53,7 +53,7 @@
 		.close-x {
 			position: absolute;
 			top: 1.5rem;
-			right: 3rem;
+			right: 2rem;
 			background: var(--color-secondary-30);
 			color: rgb(210, 200, 200);
 

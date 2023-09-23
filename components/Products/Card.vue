@@ -2,7 +2,10 @@
 	<product-card>
 		<NuxtLink :to="`/product/${product.slug}-${product.id}`">
 			<picture>
-				<NuxtImg :src="`${product.image}`" alt="p-image" />
+				<NuxtImg
+					:src="`${config.public.supabase.url}/storage/v1/object/public/images/${product.image}`"
+					alt="product-image"
+				/>
 			</picture>
 		</NuxtLink>
 		<p>{{ product.name }}</p>
@@ -14,6 +17,7 @@
 	const props = defineProps({
 		product: Object,
 	});
+	const config = useRuntimeConfig();
 </script>
 
 <style lang="scss" scoped>
