@@ -14,11 +14,11 @@
 				<li>
 					<p>{{ product.size }}</p>
 				</li>
-				<li><p>|</p></li>
+				<li class="bar"><p>|</p></li>
 				<li>
 					<p>{{ product.brand }}</p>
 				</li>
-				<li><p>|</p></li>
+				<li class="bar"><p>|</p></li>
 				<li>
 					<p>{{ product.color }}</p>
 				</li>
@@ -56,7 +56,11 @@
 
 			ul {
 				display: flex;
-				gap: 20px;
+				gap: 2vw;
+
+				.bar {
+					color: rgb(200, 206, 215);
+				}
 			}
 		}
 	}

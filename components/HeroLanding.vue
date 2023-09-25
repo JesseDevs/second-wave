@@ -4,7 +4,7 @@
 			<span>SecondWave:</span>
 			<span>Retail Shop</span>
 		</h1>
-		<NuxtLink class="small-voice collection-link" :to="`/collection/all`">
+		<NuxtLink class="small-voice collection-link" :to="`/collection`">
 			<span>Shop Collection</span></NuxtLink
 		>
 	</div>
@@ -23,14 +23,16 @@
 
 		&:hover {
 			transform: translateZ(0) scale(1.01);
+			filter: brightness(90%);
+			filter: hue-rotate(10deg);
+
 			h1 {
 				opacity: 1;
-				text-shadow: 5px 5px 25px rgba(0, 0, 0, 0.951);
-				filter: drop-shadow(2px 4px 6px black);
+				text-shadow: -2px 1px 5px rgb(0, 0, 0);
 			}
 
 			.collection-link {
-				border-color: black;
+				border-color: var(--color-secondary-10);
 				background-color: rgba(20, 20, 20, 0.706);
 				backdrop-filter: blur(5px);
 				span {

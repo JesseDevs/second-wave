@@ -29,10 +29,21 @@
 		flex-direction: column;
 		gap: 5px;
 
+		a {
+			flex-grow: 1;
+		}
+
 		picture {
 			max-width: 200px;
+			max-height: 240px;
 			border-radius: 2rem;
 			overflow: hidden;
+			height: 100%;
+			img {
+				height: 100%;
+				width: 100%;
+				object-fit: cover;
+			}
 		}
 
 		p.tiny-voice:not(:first-of-type) {

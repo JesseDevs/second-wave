@@ -47,7 +47,6 @@
 			searches.pop();
 		}
 		searches.unshift(newSearch);
-		//Moves the latest search to the front
 
 		localStorage.setItem('recentSearches', JSON.stringify(searches));
 
@@ -78,6 +77,7 @@
 			flex-direction: column;
 			font-family: 'JetBrains Mono', monospace;
 			padding-bottom: 2rem;
+			gap: 5px;
 			border-bottom: 1px solid var(--color-secondary-20);
 			p {
 				cursor: pointer;

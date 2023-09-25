@@ -1,6 +1,13 @@
 <template>
 	<div class="products">
 		<h2 class="strict-voice">Collection</h2>
+		<NuxtLink
+			class="small-voice collection-link"
+			:to="`/collection/all`"
+			@click="ui.forceModalClose"
+		>
+			<span>Shop Collection</span></NuxtLink
+		>
 		<article-grid>
 			<aside class="product-headers">
 				<h4>MEN</h4>
@@ -27,7 +34,10 @@
 	</div>
 </template>
 
-<script setup></script>
+<script setup>
+	import { useInterfaceStore } from '~/stores/interface';
+	const ui = useInterfaceStore();
+</script>
 
 <style lang="scss" scoped>
 	.products {
@@ -68,6 +78,7 @@
 				display: flex;
 				flex-direction: column;
 				gap: 5px;
+				flex-grow: 1;
 				p {
 					cursor: pointer;
 					padding: 5px 10px;
