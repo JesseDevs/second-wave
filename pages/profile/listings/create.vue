@@ -1,6 +1,6 @@
 <template>
 	<create-page>
-		<h1>Create a New Listing</h1>
+		<h2 class="strict-voice">Create a New Listing</h2>
 		<form action="" @submit.prevent="handleSubmit">
 			<AddInput
 				v-for="input in inputs"
@@ -34,7 +34,7 @@
 			/>
 			<AddImage @change-input="onChangeInput" />
 
-			<button :disabled="isButtonDisabled">Submit</button>
+			<Button30 :disabled="isButtonDisabled">Submit</Button30>
 		</form>
 
 		<p v-if="errorMessage">{{ errorMessage }}</p>
@@ -95,7 +95,7 @@
 		},
 		{
 			id: 3,
-			title: 'Price',
+			title: 'Price *',
 			name: 'price',
 			placeholder: '0',
 		},
@@ -144,11 +144,42 @@
 	};
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 	create-page {
 		display: flex;
 		flex-direction: column;
 		position: relative;
 		width: 100%;
+		font-size: var(--text-sm);
+
+		form {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+		}
+		form-field {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+
+			label,
+			input,
+			textarea {
+				display: block;
+				width: 100%;
+			}
+
+			input {
+				font-family: 'JetBrains Mono', monospace;
+				padding: 1rem;
+			}
+		}
+
+		h2 {
+			margin-bottom: 3rem;
+			padding-bottom: 5px;
+			text-transform: uppercase;
+			font-weight: 600;
+			border-bottom: 1px solid var(--color-secondary-20);
+		}
 	}
 </style>

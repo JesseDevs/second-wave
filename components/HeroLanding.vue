@@ -19,7 +19,7 @@
 		background: url('/images/tidal-wave.jpg') bottom no-repeat;
 		background-size: cover;
 		transition: transform 0.3s ease;
-		border-radius: 2rem;
+		border-radius: 1rem;
 
 		&:hover {
 			transform: translateZ(0) scale(1.01);

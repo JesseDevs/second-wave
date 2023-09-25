@@ -87,7 +87,7 @@
 		background-color: var(--color-primary-50);
 		background: var(--color-primary-50);
 		border: 1px solid var(--color-secondary-20);
-		border-radius: 2rem 2rem 0 0;
+		border-radius: 1rem 1rem 0 0;
 		height: 90vh;
 		height: calc(var(7.62px, 1vh) * 90);
 		transition: 0.3s bottom ease;

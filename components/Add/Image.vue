@@ -1,8 +1,8 @@
 <template>
-	<ad-image>
-		<label for="">Image</label>
+	<form-field>
+		<label for="image">Image</label>
 		<form-field>
-			<input type="file" name="" id="" accept="image/*" @change="onImageUpload" />
+			<input type="file" name="image" id="" accept="image/*" @change="onImageUpload" />
 			<span>Browse File</span>
 		</form-field>
 		<article v-if="image.preview">
@@ -10,7 +10,7 @@
 				<NuxtImg :src="image.preview" alt="image-upload-preview" />
 			</picture>
 		</article>
-	</ad-image>
+	</form-field>
 </template>
 
 <script setup>
@@ -37,33 +37,4 @@
 	const emits = defineEmits(['changeInput']);
 </script>
 
-<style lang="scss" scoped>
-	ad-image {
-		display: block;
-		width: 100%;
-		label {
-			margin-bottom: 0.25rem;
-			font-size: 0.875rem;
-			line-height: 1.25rem;
-		}
-
-		form {
-			padding: 2rem;
-
-			input {
-				position: absolute;
-				opacity: 0;
-				cursor: pointer;
-			}
-			span {
-				cursor: pointer;
-			}
-		}
-	}
-
-	form-field {
-		display: block;
-		width: 100%;
-		position: relative;
-	}
-</style>
+<style lang="scss" scoped></style>
