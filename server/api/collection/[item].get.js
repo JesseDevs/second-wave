@@ -5,49 +5,46 @@ export default defineEventHandler(async (event) => {
 	const { item } = event.context.params;
 	const { brand, gender, type, minPrice, maxPrice } = getQuery(event);
 
-	if (item === 'all') {
-		return await prisma.product.findMany();
+	function capitalizeWords(str) {
+		return str.replace(/\b\w/g, (char) => char.toUpperCase());
 	}
 
-	const searchItem = item.toLowerCase();
+	let filters = {};
 
-	let filters = {
-		slug: {
-			contains: searchItem,
-		},
-	};
+	if (item) {
+		filters = {
+			slug: {
+				contains: item.toLowerCase(),
+			},
+		};
+	}
 
 	if (brand) {
-		filters = {
-			...filters,
-			brand,
-		};
+		filters.brand = brand.toLowerCase();
 	}
 
 	if (gender) {
-		filters = {
-			...filters,
-			gender,
-		};
+		filters.gender = gender.toLowerCase();
 	}
 
 	if (type) {
-		filters = {
-			...filters,
-			type,
-		};
+		filters.type = type.toLowerCase();
 	}
 
-	if (minPrice || maxPrice) {
-		filters.price = {};
-	}
+	// if (minPrice || maxPrice) {
+	// 	filters.price = {};
+	// }
 
-	if (minPrice) {
-		filters.price.gte = parseInt(minPrice);
-	}
+	// if (minPrice) {
+	// 	filters.price.gte = parseInt(minPrice);
+	// }
 
-	if (maxPrice) {
-		filters.price.lte = parseInt(maxPrice);
+	// if (maxPrice) {
+	// 	filters.price.lte = parseInt(maxPrice);
+	// }
+
+	if (item === 'all') {
+		filters = {};
 	}
 
 	return await prisma.product.findMany({

@@ -6,11 +6,11 @@ const prisma = new PrismaClient();
 const schema = Joi.object({
 	name: Joi.string().required(),
 	slug: Joi.string().required(),
-	description: Joi.string().required().min(20),
+	description: Joi.string().required().min(10),
 	color: Joi.string().required(),
 	type: Joi.string().required(),
 	brand: Joi.string().required(),
-	gender: Joi.string().required().max(1),
+	gender: Joi.string().required(),
 	size: Joi.string().required(),
 	image: Joi.string().required(),
 	listerId: Joi.string().required(),
