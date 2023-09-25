@@ -36,7 +36,7 @@
 		picture {
 			max-width: 200px;
 			max-height: 240px;
-			border-radius: 2rem;
+			border-radius: 1rem;
 			overflow: hidden;
 			height: 100%;
 			img {

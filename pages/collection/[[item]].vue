@@ -4,7 +4,7 @@
 	</div>
 	<div v-else>
 		<div v-if="products && products.length > 0" class="collection-container">
-			<h2 class="yell-voice">Collection</h2>
+			<h2 class="strict-voice">Collection</h2>
 			<ProductsCard v-for="product in products" :key="product.id" :product="product" />
 		</div>
 

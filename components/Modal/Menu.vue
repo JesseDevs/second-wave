@@ -3,7 +3,7 @@
 		<h2 class="strict-voice">Collection</h2>
 		<NuxtLink
 			class="small-voice collection-link"
-			:to="`/collection/all`"
+			:to="`/collection`"
 			@click="ui.forceModalClose"
 		>
 			<span>Shop Collection</span></NuxtLink

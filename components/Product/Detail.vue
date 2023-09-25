@@ -43,7 +43,7 @@
 		row-gap: 2rem;
 
 		picture {
-			border-radius: 2rem;
+			border-radius: 1rem;
 			overflow: hidden;
 		}
 
