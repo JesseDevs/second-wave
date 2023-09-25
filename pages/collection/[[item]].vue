@@ -23,7 +23,7 @@
 	const { data: products, refresh } = await useFetchProducts(route.params.item, {
 		minPrice,
 		maxPrice,
-		brand: route.params.brand,
+		brand: route.query.brand,
 		gender: route.params.gender,
 		type: route.params.type,
 	});
@@ -40,8 +40,7 @@
 
 	useHead({
 		title: `
-			SecondWave | ${capitalizeWords(route.params.item)}
-		 in products.`,
+			SecondWave | ${capitalizeWords(route.params.item)} in Collection`,
 	});
 </script>
 
