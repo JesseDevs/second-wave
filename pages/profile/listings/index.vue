@@ -46,7 +46,7 @@
 				padding: 1rem;
 				font-weight: 700;
 				color: #ffffff;
-				background-color: #60a5fa;
+				background-color: var(--brand);
 				cursor: pointer;
 				transition: background-color 0.3s ease;
 
@@ -58,8 +58,10 @@
 		article-grid {
 			display: flex;
 			margin-top: 6rem;
-			justify-content: space-between;
+			row-gap: 5vw;
+			column-gap: 3vw;
 			align-items: center;
+			flex-direction: column;
 		}
 	}
 </style>

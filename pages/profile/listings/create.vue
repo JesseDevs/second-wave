@@ -119,6 +119,11 @@
 		//post request
 		const body = {
 			...info.value,
+			color: info.value.color.toLowerCase(),
+			size: info.value.size.toLowerCase(),
+			brand: info.value.brand.toLowerCase(),
+			gender: info.value.gender.toLowerCase(),
+			type: info.value.type.toLowerCase(),
 			slug: info.value.name.toLowerCase().replace(/ /g, '-'),
 			price: parseInt(info.value.price),
 			listerId: user.value.id,

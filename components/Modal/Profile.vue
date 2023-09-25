@@ -73,6 +73,7 @@
 			border-top: 1px solid var(--color-secondary-20);
 			border-bottom: 1px solid var(--color-secondary-20);
 			gap: 1vh;
+
 			a {
 				display: block;
 				cursor: pointer;

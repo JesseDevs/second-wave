@@ -1,6 +1,6 @@
 export default async (item, filters) => {
-	const { data, refresh, error } = useFetch(`/api/collection/${item}`, {
-		params: {
+	const { data, refresh, error } = await useFetch(`/api/collection/${item}`, {
+		query: {
 			...filters,
 		},
 	});

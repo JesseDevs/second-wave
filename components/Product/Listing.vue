@@ -12,7 +12,7 @@
 			<p>{{ listing.name }}</p>
 		</text-content>
 		<listing-buttons>
-			<NuxtLink :to="`/profile/listings/view/${listing.id}`">View</NuxtLink>
+			<NuxtLink :to="`/profile/listings/detail/${listing.id}`">View</NuxtLink>
 			<span class="vline"></span>
 			<p @click="emits('deleteClick', listing.id)">Delete</p>
 		</listing-buttons>
@@ -39,7 +39,7 @@
 
 		border-radius: 1rem;
 		border: 1px solid var(--color-secondary-20);
-		box-shadow: 0 1px 5px 0 var(--color-secondary-20);
+		box-shadow: 0 1px 2px 0 var(--color-secondary-20);
 
 		picture {
 			max-width: 10rem;
@@ -47,7 +47,7 @@
 			overflow: hidden;
 		}
 		text-content h3 {
-			color: #60a5fa;
+			color: var(--brand);
 			font-weight: 500;
 		}
 
@@ -86,7 +86,7 @@
 			border-right: 1px solid var(--color-secondary-20);
 
 			&:hover {
-				background-color: #60a5fa;
+				background-color: var(--brand);
 				color: black;
 			}
 		}
@@ -97,6 +97,12 @@
 				background-color: #f87171;
 				color: black;
 			}
+		}
+	}
+
+	.no-buttons {
+		listing-buttons {
+			display: none;
 		}
 	}
 </style>

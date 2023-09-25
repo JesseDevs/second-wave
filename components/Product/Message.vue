@@ -13,14 +13,19 @@
 
 <script setup>
 	const props = defineProps({
-		message: object,
+		message: Object,
+		listing: Object,
 	});
 </script>
 
 <style lang="scss" scoped>
 	message-card {
+		display: block;
+		width: 100%;
 		padding: 1rem;
 		background-color: #f3f4f6;
+		border-radius: 1rem;
+		border: 1px solid var(--color-secondary-20);
 		> p {
 			color: #374151;
 		}
