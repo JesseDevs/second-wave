@@ -5,7 +5,7 @@
 			<p>Log In</p>
 		</text-content>
 
-		<Button30 click="loginWithGoogle">
+		<Button30 :onClick="loginWithGoogle">
 			<Icon name="logos:google-icon" />
 
 			<span>Continue with Google</span>
@@ -32,10 +32,6 @@
 </template>
 
 <script setup>
-	definePageMeta({
-		layout: 'center',
-	});
-
 	const supabase = useSupabaseClient();
 	const user = useSupabaseUser();
 	const loginWithGoogle = async () => {
@@ -47,6 +43,10 @@
 			console.log(error);
 		}
 	};
+
+	definePageMeta({
+		layout: 'center',
+	});
 </script>
 
 <style lang="scss" scoped>
