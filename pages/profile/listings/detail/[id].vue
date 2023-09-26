@@ -12,7 +12,7 @@
 
 		<message-container>
 			<ProductMessage
-				v-if="mmessages && messages.length > 0"
+				v-if="messages && messages.length > 0"
 				v-for="message in messages"
 				:key="message.id"
 				:message="message"
@@ -40,7 +40,7 @@
 		border-radius: 1rem;
 		border: 1px solid var(--color-secondary-20);
 		box-shadow: 0 1px 2px 0 var(--color-secondary-20);
-		padding: 1.2rem;
+		padding: 2rem 1.2rem;
 	}
 
 	.text-center {

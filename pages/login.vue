@@ -1,26 +1,23 @@
 <template>
 	<login-page>
-		<picture>
-			<NuxtImg src="fff" alt="logo-img" />
-		</picture>
-		<h1>Log In</h1>
-		<ul>
-			<li>
-				<button @click="loginWithGoogle">
-					<Icon name="logos:google-icon" />
+		<text-content>
+			<h1 class="strict-voice">SecondWave</h1>
+			<p>Log In</p>
+		</text-content>
 
-					<span>Continue with Google</span>
-				</button>
-			</li>
-			<li>
+		<Button30 click="loginWithGoogle">
+			<Icon name="logos:google-icon" />
+
+			<span>Continue with Google</span>
+		</Button30>
+
+		<!--
 				<button>
 					<Icon name="mdi:email-multiple" />
 
 					<span>Continue with email</span>
-				</button>
-			</li>
-		</ul>
-
+				</button> -->
+		<!--
 		<div class="line-divider">
 			<div class="line"></div>
 			<p class="small-voice">or</p>
@@ -30,11 +27,15 @@
 		<p class="confirmed-user">
 			Already have an account?
 			<span>Log In</span>
-		</p>
+		</p> -->
 	</login-page>
 </template>
 
 <script setup>
+	definePageMeta({
+		layout: 'center',
+	});
+
 	const supabase = useSupabaseClient();
 	const user = useSupabaseUser();
 	const loginWithGoogle = async () => {
@@ -49,6 +50,29 @@
 </script>
 
 <style lang="scss" scoped>
+	login-page {
+		display: grid;
+		grid-template-columns: 1fr;
+		height: 100%;
+		place-items: center;
+	}
+
+	button {
+		display: flex;
+		gap: 1rem;
+	}
+
+	text-content {
+		display: flex;
+		flex-direction: column;
+		gap: 2vw;
+		padding-bottom: 10vw;
+		text-align: center;
+
+		h1 {
+			font-weight: 600;
+		}
+	}
 	.confirmed-user {
 		span {
 			cursor: pointer;

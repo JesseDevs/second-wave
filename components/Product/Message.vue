@@ -1,13 +1,15 @@
 <template>
 	<message-card>
-		<h1>{{ message.name }}</h1>
-		<p>
-			{{ message.text }}
-		</p>
-		<div class="message-contact">
-			<p>{{ message.email }}</p>
+		<div class="row">
+			<p>{{ message.name }}</p>
+			<p>|</p>
 			<p>{{ message.phone }}</p>
 		</div>
+		<p class="email">{{ message.email }}</p>
+
+		<p class="message-text">
+			{{ message.text }}
+		</p>
 	</message-card>
 </template>
 
@@ -20,24 +22,37 @@
 
 <style lang="scss" scoped>
 	message-card {
-		display: block;
+		display: flex;
+		flex-direction: column;
+		gap: 1vw;
 		width: 100%;
 		padding: 1rem;
 		background-color: #f3f4f6;
 		border-radius: 1rem;
 		border: 1px solid var(--color-secondary-20);
-		> p {
-			color: #374151;
-		}
-	}
+		background-color: var(--color-primary-30);
 
-	.message-contact {
-		p {
-			margin-right: 2.5rem;
-			color: #047857;
+		font-size: var(--text-xs);
+
+		* {
+			font-size: inherit;
 		}
-		p + p {
-			color: #3b82f6;
+
+		div.row {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			gap: 3vw;
+			font-family: 'JetBrains Mono', monospace;
+			color: var(--brand);
+		}
+
+		.email {
+			color: #84abdb;
+		}
+
+		.message-text {
+			padding-top: 4vw;
 		}
 	}
 </style>

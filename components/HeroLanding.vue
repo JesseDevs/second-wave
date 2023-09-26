@@ -21,10 +21,26 @@
 		transition: transform 0.3s ease;
 		border-radius: 1rem;
 
+		&::before {
+			content: '';
+			position: absolute;
+			opacity: 0;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(17, 17, 17, 0.1);
+			border-radius: inherit;
+			transition: opacity 0.5s ease;
+		}
+
 		&:hover {
 			transform: translateZ(0) scale(1.01);
-			filter: brightness(90%);
 			filter: hue-rotate(10deg);
+
+			&::before {
+				opacity: 1;
+			}
 
 			h1 {
 				opacity: 1;
