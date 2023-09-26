@@ -61,7 +61,7 @@
 			mix-blend-mode: overlay;
 			max-width: fit-content;
 			position: absolute;
-			transition: opacity 0.5s ease, text-shadow 0.3s ease;
+			transition: opacity 0.5s ease, text-shadow 0.3s ease, font-size 0.3s ease;
 			top: 60%;
 			left: 50%;
 			opacity: 0.8;
@@ -99,6 +99,15 @@
 
 			&:hover {
 				background-color: black;
+			}
+		}
+
+		@media (min-width: 500px) {
+			h1 {
+				top: 55%;
+			}
+			.chant-voice {
+				font-size: var(--text-xl);
 			}
 		}
 	}
