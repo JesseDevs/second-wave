@@ -2,11 +2,11 @@
 	"name": "second-wave",
 	"private": true,
 	"scripts": {
-		"build": "nuxt build",
+		"build": "prisma generate && prisma migrate deploy && next build",
 		"dev": "nuxt dev",
 		"generate": "nuxt generate",
 		"preview": "nuxt preview",
-		"postinstall": "nuxt prepare",
+		"postinstall": "nuxt prepare && prisma generate",
 		"deploy": "nuxt generate && cp .output/public/index.html .output/public/200.html && cp CNAME .output/public && surge .output/public"
 	},
 	"devDependencies": {
