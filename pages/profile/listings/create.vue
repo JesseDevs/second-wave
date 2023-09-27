@@ -78,7 +78,7 @@
 
 	const typesOfClothing = ['Shirts', 'Bottoms', 'Outerwear', 'Jackets', 'Accessories', 'Swim'];
 
-	const genders = ['Men', 'Woman'];
+	const genders = ['Men', 'Women'];
 
 	const inputs = [
 		{
