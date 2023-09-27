@@ -2,7 +2,7 @@
 	"name": "second-wave",
 	"private": true,
 	"scripts": {
-		"build": "prisma generate && prisma migrate deploy && next build",
+		"build": "next build",
 		"dev": "nuxt dev",
 		"generate": "nuxt generate",
 		"preview": "nuxt preview",
