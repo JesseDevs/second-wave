@@ -24,8 +24,8 @@
 		minPrice,
 		maxPrice,
 		brand: route.query.brand,
-		gender: route.params.gender,
-		type: route.params.type,
+		gender: route.query.gender,
+		type: route.query.type,
 	});
 
 	watch(

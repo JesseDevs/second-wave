@@ -16,18 +16,26 @@
 
 			<article>
 				<ul>
-					<li><p class="tiny-voice">Tops</p></li>
-					<li><p class="tiny-voice">Bottoms</p></li>
-					<li><p class="tiny-voice">Accessories</p></li>
-					<li><p class="tiny-voice">Jackets</p></li>
-					<li><p class="tiny-voice">Outerwear</p></li>
+					<li v-for="ty in typesOfClothing" :key="ty">
+						<NuxtLink
+							class="small-voice collection-link"
+							:to="`/collection/all?gender=men&type=${ty}`"
+							@click="ui.forceModalClose"
+						>
+							<span class="tiny-voice">{{ capitalizeWords(ty) }}</span></NuxtLink
+						>
+					</li>
 				</ul>
 				<ul>
-					<li><p class="tiny-voice">Tops</p></li>
-					<li><p class="tiny-voice">Bottoms</p></li>
-					<li><p class="tiny-voice">Accessories</p></li>
-					<li><p class="tiny-voice">Jackets</p></li>
-					<li><p class="tiny-voice">Outerwear</p></li>
+					<li v-for="ty in typesOfClothing" :key="ty">
+						<NuxtLink
+							class="small-voice collection-link"
+							:to="`/collection/all?gender=women&type=${ty}`"
+							@click="ui.forceModalClose"
+						>
+							<span class="tiny-voice">{{ capitalizeWords(ty) }}</span></NuxtLink
+						>
+					</li>
 				</ul>
 			</article>
 		</article-grid>
@@ -37,6 +45,9 @@
 <script setup>
 	import { useInterfaceStore } from '~/stores/interface';
 	const ui = useInterfaceStore();
+	const { capitalizeWords } = useUtilities();
+
+	const typesOfClothing = ['shirts', 'bottoms', 'outerwear', 'jackets', 'accessories', 'swim'];
 </script>
 
 <style lang="scss" scoped>
@@ -79,8 +90,10 @@
 				flex-direction: column;
 				gap: 5px;
 				flex-grow: 1;
-				p {
+				a {
 					cursor: pointer;
+					width: 100%;
+					display: block;
 					padding: 5px 10px;
 					border-radius: 5px;
 					transition: background-color 0.3s ease;

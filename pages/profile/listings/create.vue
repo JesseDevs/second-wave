@@ -76,7 +76,7 @@
 
 	const sizes = ['3XS', 'XXS', 'XS', 'SML', 'MED', 'LRG', 'XL', 'XXL', '3XL', 'One Size'];
 
-	const typesOfClothing = ['Tops', 'Bottoms', 'Outerwear', 'Jackets', 'Accessories', 'Swim'];
+	const typesOfClothing = ['Shirts', 'Bottoms', 'Outerwear', 'Jackets', 'Accessories', 'Swim'];
 
 	const genders = ['Men', 'Woman'];
 

@@ -19,6 +19,10 @@ export default defineEventHandler(async (event) => {
 		};
 	}
 
+	if (item === 'all') {
+		filters = {};
+	}
+
 	if (brand) {
 		filters.brand = brand.toLowerCase();
 	}
@@ -28,6 +32,7 @@ export default defineEventHandler(async (event) => {
 	}
 
 	if (type) {
+		console.log(type);
 		filters.type = type.toLowerCase();
 	}
 
@@ -43,9 +48,7 @@ export default defineEventHandler(async (event) => {
 	// 	filters.price.lte = parseInt(maxPrice);
 	// }
 
-	if (item === 'all') {
-		filters = {};
-	}
+	console.log(filters);
 
 	return await prisma.product.findMany({
 		where: filters,
