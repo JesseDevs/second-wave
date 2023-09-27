@@ -45,6 +45,12 @@
 			max-width: 10rem;
 			border-radius: 1rem;
 			overflow: hidden;
+			img {
+				display: block;
+				max-width: 100%;
+				object-fit: cover;
+				height: 100%;
+			}
 		}
 		text-content h3 {
 			color: var(--brand);
