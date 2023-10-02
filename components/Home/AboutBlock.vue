@@ -88,10 +88,38 @@
 			display: flex;
 			flex-direction: column;
 			gap: 2vw;
+
 			p {
 				padding-left: 1rem;
 				border-left: 2px solid var(--color-secondary-20);
 				opacity: 0.9;
+			}
+		}
+
+		@media (min-width: 700px) {
+			align-items: center;
+			flex-direction: row;
+			column-gap: 3rem;
+
+			text-content {
+				p {
+					padding-left: 0;
+					border-left: 0;
+				}
+			}
+
+			&:nth-of-type(even) {
+				flex-direction: row-reverse;
+				text-content {
+					padding-left: 1.5rem;
+					border-left: 2px solid var(--color-secondary-20);
+				}
+			}
+			&:nth-of-type(odd) {
+				text-content {
+					padding-right: 1.5rem;
+					border-right: 2px solid var(--color-secondary-20);
+				}
 			}
 		}
 	}

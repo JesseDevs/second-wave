@@ -30,6 +30,7 @@
 <style lang="scss" scoped>
 	.site-footer {
 		display: block;
+		margin-top: 200px;
 		width: 100%;
 		position: relative;
 		background-color: var(--color-primary-50);
