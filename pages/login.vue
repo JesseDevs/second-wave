@@ -2,13 +2,12 @@
 	<login-page>
 		<text-content>
 			<h1 class="strict-voice">SecondWave</h1>
-			<p>Log In</p>
 		</text-content>
 
 		<Button30 :onClick="loginWithGoogle">
 			<Icon name="logos:google-icon" />
 
-			<span>Continue with Google</span>
+			<span>Sign in with Google</span>
 		</Button30>
 
 		<!--

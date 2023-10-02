@@ -53,9 +53,10 @@
 
 	.collection-container {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
 		row-gap: 5vw;
 		column-gap: 3vw;
+		padding-bottom: 5vw;
 
 		h2 {
 			grid-column: 1/-1;

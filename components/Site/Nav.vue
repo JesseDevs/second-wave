@@ -17,9 +17,9 @@
 					<div class="icon-button" @click="ui.toggleSearchBar">
 						<Icon name="ion:search-sharp" size="21" color="var(--text)" />
 					</div>
-					<div v-if="user" class="icon-button">
+					<!-- <div v-if="user" class="icon-button">
 						<Icon name="ph:bag-simple-bold" size="21" color="var(--text)" />
-					</div>
+					</div> -->
 					<button class="hamburger-button icon-button" @click="ui.toggleMainMenu">
 						<Icon name="grommet-icons:menu" size="21" color="var(--text)" />
 					</button>
@@ -42,17 +42,18 @@
 		position: sticky;
 		top: 0;
 		z-index: 50;
-		box-shadow: 0 0 5rem var(--color-black-20);
-		border-bottom-left-radius: 2rem;
-		border-bottom-right-radius: 2rem;
-
-		border: 1px solid hsla(var(--color-secondary-hsl), 0.2);
-		border-top: none;
-		backdrop-filter: saturate(180%) blur(1rem);
-		background-color: var(--color-primary-50);
 
 		inner-column {
 			padding: 1.5rem 2rem;
+			box-shadow: 0 0 5rem var(--color-black-20);
+			border-bottom-left-radius: 2rem;
+			border-bottom-right-radius: 2rem;
+
+			border: 1px solid hsla(var(--color-secondary-hsl), 0.2);
+			border-top: none;
+			backdrop-filter: saturate(180%) blur(1rem);
+			background-color: var(--color-primary-50);
+			max-width: 1000px;
 
 			.main-menu {
 				display: flex;

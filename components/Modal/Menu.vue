@@ -2,7 +2,7 @@
 	<div class="products">
 		<h2 class="strict-voice">Collection</h2>
 		<NuxtLink
-			class="small-voice collection-link"
+			class="small-voice collection-link button-30"
 			:to="`/collection`"
 			@click="ui.forceModalClose"
 		>

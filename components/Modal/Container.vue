@@ -77,7 +77,7 @@
 		display: block;
 		overflow: hidden;
 		width: 100vw;
-		max-width: 800px;
+		max-width: 1000px;
 		padding: 4rem 3rem;
 		pointer-events: all;
 		position: fixed;
@@ -87,11 +87,14 @@
 		background-color: var(--color-primary-50);
 		background: var(--color-primary-50);
 		border: 1px solid var(--color-secondary-20);
+		border-bottom: none;
 		border-radius: 1rem 1rem 0 0;
 		height: 90vh;
 		height: calc(var(7.62px, 1vh) * 90);
 		transition: 0.3s bottom ease;
-		// transform: translateY(100%);
-		// width: 90vw;
+
+		left: 0%;
+		right: 0%;
+		margin: 0 auto;
 	}
 </style>

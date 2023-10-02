@@ -21,6 +21,7 @@
 				>
 			</li>
 		</ul>
+
 		<Button30 :onClick="logout"> Logout</Button30>
 	</profile-modal>
 </template>

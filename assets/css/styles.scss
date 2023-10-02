@@ -8,6 +8,29 @@
 	}
 }
 
+.portrait {
+	aspect-ratio: 3/4;
+
+	img {
+		object-fit: cover;
+		height: 100%;
+		width: 100%;
+		display: block;
+	}
+}
+
+.landscape {
+	aspect-ratio: 12/9;
+
+	img {
+		object-fit: cover;
+		height: 100%;
+		width: 100%;
+		display: block;
+	}
+}
+
+
 
 p a {
 	color: var(--brand);

@@ -19,7 +19,6 @@
 </template>
 
 <script setup>
-	import { useInterfaceStore } from '~/stores/interface';
 	const ui = useInterfaceStore();
 	const { capitalizeWords } = useUtilities();
 
@@ -39,8 +38,11 @@
 	};
 
 	const handleSearch = () => {
-		const newSearch = formattedItem.value;
-
+		let newSearch = formattedItem.value;
+		if (!newSearch) {
+			newSearch = 'all';
+			console.log(newSearch);
+		}
 		const searches = recentSearches.value.filter((item) => item !== newSearch);
 
 		if (searches.length >= MAX_SEARCHES) {
@@ -51,11 +53,7 @@
 		localStorage.setItem('recentSearches', JSON.stringify(searches));
 
 		ui.forceModalClose();
-		if (!formattedItem.value) {
-			return (searchErr.value = true);
-		}
-
-		navigateTo(`/collection/${formattedItem.value}`);
+		navigateTo(`/collection/${newSearch}`);
 	};
 </script>
 

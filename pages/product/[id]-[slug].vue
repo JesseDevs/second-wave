@@ -1,22 +1,18 @@
 <template>
 	<detail-page>
 		<ProductDetail :product="product" />
-		<!--
-		<article class="detail-attr" v-for="feature in product.features" :key="feature"> -->
 
-		<text-content>
-			<p><span>Designed for :</span> {{ product.gender }}</p>
-			<p><span>Type:</span> {{ product.type }}</p>
-			<p>
-				<span>Description:</span><br />
-				{{ product.description }}
-			</p>
-		</text-content>
-		<ProductMessageForm />
+		<ProductMessageForm v-if="user" />
+		<div class="login" v-else>
+			<NuxtLink to="/login">
+				Login to contact seller <Icon name="ic:outline-arrow-right-alt" size="21"
+			/></NuxtLink>
+		</div>
 	</detail-page>
 </template>
 
 <script setup>
+	const user = useSupabaseUser();
 	const route = useRoute();
 	const { capitalizeWords } = useUtilities();
 
@@ -28,12 +24,12 @@
 </script>
 
 <style lang="scss" scoped>
-	text-content {
-		padding-top: 2rem;
-		padding-bottom: 2rem;
-
-		p span {
-			color: rgb(137, 151, 172);
+	div.login {
+		padding-top: 5rem;
+		a {
+			&:hover {
+				text-decoration: underline;
+			}
 		}
 	}
 

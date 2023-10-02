@@ -36,11 +36,13 @@ export default defineNuxtConfig({
 		},
 	},
 	supabase: {
-		redirectOptions: {
-			login: '/login',
-			callback: '/',
-			exclude: ['/'],
-		},
+		redirect: false,
 	},
 	components: true,
+	pinia: {
+		autoImports: ['defineStore'],
+	},
+	imports: {
+		dirs: ['./stores'],
+	},
 });
