@@ -1,13 +1,24 @@
 <template>
-	<div class="landing">
-		<h1 class="chant-voice">
-			<span>SecondWave:</span>
-			<span>Retail Shop</span>
-		</h1>
-		<NuxtLink class="small-voice collection-link" :to="`/collection`">
-			<span>Shop Collection</span></NuxtLink
-		>
-	</div>
+	<section>
+		<inner-column>
+			<div class="landing">
+				<div class="test">
+					<h1 class="chant-voice back-up">
+						<span>SecondWave:</span>
+						<span>Retail Shop</span>
+					</h1>
+					<h1 class="chant-voice">
+						<span>SecondWave:</span>
+						<span>Retail Shop</span>
+					</h1>
+
+					<NuxtLink class="small-voice collection-link" :to="`/collection`">
+						<span>Shop Collection</span></NuxtLink
+					>
+				</div>
+			</div>
+		</inner-column>
+	</section>
 </template>
 
 <script setup></script>
@@ -20,6 +31,14 @@
 		background-size: cover;
 		transition: transform 0.3s ease;
 		border-radius: 1rem;
+
+		@media (min-width: 700px) {
+			background-position: center;
+		}
+		.test {
+			height: 100%;
+			background-color: transparent;
+		}
 
 		&::before {
 			content: '';
@@ -36,7 +55,7 @@
 
 		&:hover {
 			transform: translateZ(0) scale(1.01);
-			filter: hue-rotate(10deg);
+			filter: hue-rotate(-2deg);
 
 			&::before {
 				opacity: 1;
@@ -58,7 +77,6 @@
 		}
 
 		h1 {
-			mix-blend-mode: overlay;
 			max-width: fit-content;
 			position: absolute;
 			transition: opacity 0.5s ease, text-shadow 0.3s ease, font-size 0.3s ease;
@@ -69,6 +87,13 @@
 			font-weight: 900;
 			color: white;
 			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.574);
+		}
+
+		h1.back-up {
+			color: rgb(61, 61, 61);
+			top: 57%;
+			left: 49%;
+			mix-blend-mode: difference;
 		}
 
 		h1 span {
