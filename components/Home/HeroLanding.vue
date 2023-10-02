@@ -1,5 +1,5 @@
 <template>
-	<section>
+	<section class="hero-landing">
 		<inner-column>
 			<div class="landing">
 				<div class="test">
@@ -24,6 +24,10 @@
 <script setup></script>
 
 <style lang="scss" scoped>
+	section.hero-landing {
+		padding-top: 8vw;
+		padding-bottom: 10vw;
+	}
 	.landing {
 		position: relative;
 		height: 400px;
