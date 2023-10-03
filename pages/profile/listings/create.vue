@@ -1,7 +1,7 @@
 <template>
 	<create-page>
 		<h2 class="strict-voice">Create a New Listing</h2>
-		<form action="" @submit.prevent="handleSubmit">
+		<form action="" font-family="small-voice" @submit.prevent="handleSubmit">
 			<AddInput
 				v-for="input in inputs"
 				:key="input.id"
@@ -10,21 +10,27 @@
 				:placeholder="input.placeholder"
 				@change-input="onChangeInput"
 			/>
-			<AddSelect title="Size *" :options="sizes" name="size" @change-input="onChangeInput" />
 
-			<AddSelect
-				title="Type *"
-				:options="typesOfClothing"
-				name="type"
-				@change-input="onChangeInput"
-			/>
-
-			<AddSelect
-				title="Gender *"
-				:options="genders"
-				name="gender"
-				@change-input="onChangeInput"
-			/>
+			<select-block>
+				<AddSelect
+					title="Size *"
+					:options="sizes"
+					name="size"
+					@change-input="onChangeInput"
+				/>
+				<AddSelect
+					title="Type *"
+					:options="typesOfClothing"
+					name="type"
+					@change-input="onChangeInput"
+				/>
+				<AddSelect
+					title="Gender *"
+					:options="genders"
+					name="gender"
+					@change-input="onChangeInput"
+				/>
+			</select-block>
 
 			<AddTextarea
 				title="Description *"
@@ -154,23 +160,50 @@
 
 		form {
 			display: grid;
-			grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+			grid-template-columns: repeat(1, minmax(0, 1fr));
+			row-gap: 2rem;
+			* {
+				font-size: inherit;
+			}
+
+			select-block {
+				display: flex;
+				width: 100%;
+				gap: 1rem;
+
+				form-field:nth-of-type(2) {
+					flex-grow: 1;
+					flex-shrink: 0;
+					flex-basis: 40%;
+				}
+			}
 		}
 		form-field {
 			display: flex;
 			flex-direction: column;
 			width: 100%;
 
-			label,
 			input,
-			textarea {
+			textarea,
+			select {
 				display: block;
 				width: 100%;
+				padding: 1.2rem;
+				resize: none;
+				border: none;
+				outline: none;
+				border-radius: 0.25rem;
+				font-family: 'JetBrains Mono', monospace;
 			}
 
-			input {
-				font-family: 'JetBrains Mono', monospace;
-				padding: 1rem;
+			label {
+				display: block;
+				width: 100%;
+				padding-bottom: 1rem;
+			}
+
+			textarea {
+				min-height: 150px;
 			}
 		}
 
@@ -180,6 +213,26 @@
 			text-transform: uppercase;
 			font-weight: 600;
 			border-bottom: 1px solid var(--color-secondary-20);
+		}
+
+		select::-ms-expand {
+			display: none; /* Remove default arrow for IE */
+		}
+
+		select {
+			position: relative;
+		}
+		select::after {
+			content: '\25BC'; /* Unicode character for down arrow */
+			position: absolute;
+			top: 50%;
+			right: 10px;
+			transform: translateY(-50%);
+			/* Adjust font size of the arrow */
+			font-size: 16px; /* Example font size */
+			/* Adjust color of the arrow */
+			color: #555; /* Example color */
+			pointer-events: none;
 		}
 	}
 </style>

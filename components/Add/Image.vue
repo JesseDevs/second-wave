@@ -1,15 +1,13 @@
 <template>
 	<form-field>
 		<label for="image">Image</label>
-		<form-field>
-			<input type="file" name="image" id="" accept="image/*" @change="onImageUpload" />
-			<span>Browse File</span>
-		</form-field>
-		<article v-if="image.preview">
+		<input type="file" name="image" id="" accept="image/*" @change="onImageUpload" />
+
+		<aside v-if="image.preview">
 			<picture>
 				<NuxtImg :src="image.preview" alt="image-upload-preview" />
 			</picture>
-		</article>
+		</aside>
 	</form-field>
 </template>
 
@@ -37,4 +35,8 @@
 	const emits = defineEmits(['changeInput']);
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+	input {
+		background-color: red;
+	}
+</style>

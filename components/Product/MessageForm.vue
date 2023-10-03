@@ -1,8 +1,11 @@
 <script setup>
+	const props = defineProps({
+		userEmail: String,
+	});
 	const route = useRoute();
 	const message = ref({
 		name: '',
-		email: '',
+		email: props.userEmail,
 		phone: '',
 		text: '',
 	});
@@ -47,8 +50,16 @@
 		</section-header>
 		<form action="" @submit.prevent="onSubmit">
 			<input v-model="message.name" type="text" placeholder="Name" />
-			<input v-model="message.email" type="text" placeholder="Email" />
-			<input v-model="message.phone" type="text" placeholder="Phone" />
+
+			<input v-model="message.email" type="email" :placeholder="userEmail" disabled />
+
+			<input
+				v-model="message.phone"
+				type="text"
+				placeholder="Phone"
+				maxlength="10"
+				pattern="[1-9]{1}[0-9]{9}"
+			/>
 			<textarea v-model="message.text" placeholder="Message"></textarea>
 			<Button30 :disabled="disableButton">Submit</Button30>
 		</form>
@@ -68,6 +79,7 @@
 			display: flex;
 			flex-direction: column;
 			gap: 1.5rem;
+			max-width: 500px;
 
 			input,
 			textarea {
@@ -76,10 +88,28 @@
 				border: none;
 				outline: none;
 				border-radius: 0.25rem;
+				font-family: 'JetBrains Mono', monospace;
+			}
+
+			input:disabled {
+				background-color: rgb(143, 139, 139);
 			}
 
 			textarea {
 				min-height: 150px;
+			}
+
+			@media (min-width: 700px) {
+				display: grid;
+				grid-template-columns: repeat(3, minmax(0, 1fr));
+				max-width: 900px;
+				textarea {
+					grid-column: 1/-1;
+				}
+			}
+
+			@media (min-width: 930px) {
+				padding-left: 3rem;
 			}
 		}
 	}
@@ -89,7 +119,7 @@
 		flex-direction: row-reverse;
 		width: 100%;
 		gap: 1.2rem;
-		margin-bottom: 2.4rem;
+		margin-bottom: 3.4rem;
 		h2 {
 			flex-shrink: 0;
 		}
