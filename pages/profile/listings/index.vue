@@ -62,6 +62,12 @@
 			column-gap: 3vw;
 			align-items: center;
 			flex-direction: column;
+
+			@media (min-width: 599px) {
+				display: grid !important;
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+				gap: 3rem;
+			}
 		}
 	}
 </style>

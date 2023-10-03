@@ -2,6 +2,7 @@
 	<form-field>
 		<label for="">{{ title }}</label>
 		<select name="" id="" @change="onChange" v-model="state">
+			<option disabled selected value="">Select</option>
 			<option v-for="option in options" :key="option.id" :value="option">
 				{{ option }}
 			</option>

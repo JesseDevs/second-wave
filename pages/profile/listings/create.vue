@@ -13,19 +13,19 @@
 
 			<select-block>
 				<AddSelect
-					title="Size *"
+					title="Size"
 					:options="sizes"
 					name="size"
 					@change-input="onChangeInput"
 				/>
 				<AddSelect
-					title="Type *"
+					title="Type"
 					:options="typesOfClothing"
 					name="type"
 					@change-input="onChangeInput"
 				/>
 				<AddSelect
-					title="Gender *"
+					title="Gender"
 					:options="genders"
 					name="gender"
 					@change-input="onChangeInput"
@@ -33,9 +33,9 @@
 			</select-block>
 
 			<AddTextarea
-				title="Description *"
+				title="Description"
 				name="description"
-				placeholder="..."
+				placeholder="This is a space to add some more details about your product. Condition? Quick contact? Willing to negotiate?"
 				@change-input="onChangeInput"
 			/>
 			<AddImage @change-input="onChangeInput" />
@@ -89,25 +89,25 @@
 	const inputs = [
 		{
 			id: 1,
-			title: 'Product Name *',
+			title: 'Product Name',
 			name: 'name',
 			placeholder: 'Nike Fleece Jacket',
 		},
 		{
 			id: 2,
-			title: 'Color *',
+			title: 'Color',
 			name: 'color',
 			placeholder: 'Orange',
 		},
 		{
 			id: 3,
-			title: 'Price *',
+			title: 'Price',
 			name: 'price',
 			placeholder: '0',
 		},
 		{
 			id: 4,
-			title: 'Brand *',
+			title: 'Brand',
 			name: 'brand',
 			placeholder: 'Nike',
 		},
@@ -215,24 +215,11 @@
 			border-bottom: 1px solid var(--color-secondary-20);
 		}
 
-		select::-ms-expand {
-			display: none; /* Remove default arrow for IE */
-		}
-
-		select {
-			position: relative;
-		}
-		select::after {
-			content: '\25BC'; /* Unicode character for down arrow */
-			position: absolute;
-			top: 50%;
-			right: 10px;
-			transform: translateY(-50%);
-			/* Adjust font size of the arrow */
-			font-size: 16px; /* Example font size */
-			/* Adjust color of the arrow */
-			color: #555; /* Example color */
-			pointer-events: none;
+		label:after {
+			content: '*';
+			color: rgb(215, 23, 23);
+			font-size: 14px;
+			padding-left: 3px;
 		}
 	}
 </style>

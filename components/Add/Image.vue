@@ -1,10 +1,11 @@
 <template>
 	<form-field>
 		<label for="image">Image</label>
+
 		<input type="file" name="image" id="" accept="image/*" @change="onImageUpload" />
 
-		<aside v-if="image.preview">
-			<picture>
+		<aside class="image-preview" v-if="image.preview">
+			<picture class="landscape">
 				<NuxtImg :src="image.preview" alt="image-upload-preview" />
 			</picture>
 		</aside>
@@ -37,6 +38,13 @@
 
 <style lang="scss" scoped>
 	input {
-		background-color: red;
+		padding: 0;
+	}
+
+	.image-preview {
+		margin-top: 1rem;
+		img {
+			object-fit: contain;
+		}
 	}
 </style>

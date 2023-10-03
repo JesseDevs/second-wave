@@ -15,6 +15,7 @@
 					>Sell Your Stuff</NuxtLink
 				>
 			</li>
+			<li>|</li>
 			<li>
 				<NuxtLink class="small-voice" :to="`/profile/listings`" @click="ui.forceModalClose"
 					>View Your Listings</NuxtLink
@@ -68,17 +69,27 @@
 
 		ul {
 			display: flex;
-			flex-direction: column;
 			padding-top: 2rem;
 			padding-bottom: 2rem;
 			border-top: 1px solid var(--color-secondary-20);
 			border-bottom: 1px solid var(--color-secondary-20);
 			gap: 1vh;
+			align-items: center;
+
+			li {
+				width: 100%;
+				text-align: center;
+
+				&:nth-of-type(2) {
+					width: 10px;
+				}
+			}
 
 			a {
 				display: block;
 				cursor: pointer;
 				width: 100%;
+				font-weight: 500;
 				padding: 10px 10px;
 				border-radius: 5px;
 				transition: background-color 0.3s ease;

@@ -2,14 +2,14 @@
 	<div v-if="loading" class="loading-container">
 		<Icon name="line-md:loading-twotone-loop" size="100" />
 	</div>
-	<div v-else>
+	<div v-else class="block">
 		<div v-if="products && products.length > 0" class="collection-container">
 			<h2 class="strict-voice">Collection</h2>
 			<picture class="landscape shop">
 				<img src="/images/shop.jpg" alt="" />
 				<div class="overlay"></div>
 				<text-content>
-					<p>Results: “{{ searchedItem }}”</p>
+					<p>Results for “{{ searchedItem }}”</p>
 					<p>{{ products.length }} products</p>
 				</text-content>
 			</picture>
@@ -19,10 +19,15 @@
 		<div v-else>
 			<h1>No products found, with set filters</h1>
 		</div>
+
+		<!-- <div class="circle filters" @click="ui.toggleFiltersModal">
+			<Icon name="heroicons:adjustments-horizontal" size="30" />
+		</div> -->
 	</div>
 </template>
 
 <script setup>
+	const ui = useInterfaceStore();
 	const route = useRoute();
 	const { capitalizeWords } = useUtilities();
 	const maxPrice = computed(() => route.query.maxPrice);
@@ -54,6 +59,28 @@
 </script>
 
 <style lang="scss" scoped>
+	div.circle {
+		backdrop-filter: saturate(180%) blur(1rem);
+		background-color: var(--color-primary-50);
+		border-radius: 50%;
+		width: fit-content;
+		padding: 1.2rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		position: fixed;
+		bottom: 3rem;
+		left: 3rem;
+		svg {
+			stroke-width: 10px;
+			pointer-events: none;
+		}
+	}
+
+	div.block {
+		position: relative;
+	}
 	.loading-container {
 		display: grid;
 		place-items: center;

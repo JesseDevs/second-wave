@@ -5,6 +5,7 @@
 			<ModalMenu v-if="ui.mainMenuOpen" />
 			<ModalSearch v-if="ui.searchBar" />
 			<ModalProfile v-if="ui.profileModal" />
+			<LazyModalFilters v-if="ui.filtersModal" />
 		</ModalContainer>
 		<main>
 			<slot />

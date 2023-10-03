@@ -95,8 +95,8 @@
 
 		h1.back-up {
 			color: rgb(61, 61, 61);
-			top: 57%;
-			left: 49%;
+			top: 59%;
+			left: 48.5%;
 			mix-blend-mode: difference;
 		}
 

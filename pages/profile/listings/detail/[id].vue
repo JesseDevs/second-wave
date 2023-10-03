@@ -41,6 +41,12 @@
 		border: 1px solid var(--color-secondary-20);
 		box-shadow: 0 1px 2px 0 var(--color-secondary-20);
 		padding: 2rem 1.2rem;
+
+		@media (min-width: 599px) {
+			display: grid !important;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 3rem;
+		}
 	}
 
 	.text-center {

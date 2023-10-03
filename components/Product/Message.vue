@@ -2,7 +2,7 @@
 	<message-card>
 		<div class="row">
 			<p>{{ message.name }}</p>
-			<p>|</p>
+			<p>•</p>
 			<p>{{ message.phone }}</p>
 		</div>
 		<p class="email">{{ message.email }}</p>
@@ -24,7 +24,7 @@
 	message-card {
 		display: flex;
 		flex-direction: column;
-		gap: 1vw;
+
 		width: 100%;
 		padding: 1rem;
 		background-color: #f3f4f6;
@@ -42,7 +42,7 @@
 			display: flex;
 			flex-direction: row;
 			flex-wrap: wrap;
-			gap: 3vw;
+			gap: 1rem;
 			font-family: 'JetBrains Mono', monospace;
 			color: var(--brand);
 		}
@@ -52,7 +52,8 @@
 		}
 
 		.message-text {
-			padding-top: 4vw;
+			padding-top: 1.2rem;
+			min-height: 75px;
 		}
 	}
 </style>
