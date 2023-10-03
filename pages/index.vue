@@ -1,6 +1,8 @@
 <template>
-	<HomeHeroLanding />
-	<HomeAboutBlock />
+	<div>
+		<HomeHeroLanding />
+		<HomeAboutBlock />
+	</div>
 </template>
 
 <script setup>

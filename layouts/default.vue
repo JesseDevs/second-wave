@@ -2,9 +2,9 @@
 	<div class="app-container">
 		<SiteNav />
 		<ModalContainer>
-			<ModalMenu v-if="ui.mainMenuOpen" />
-			<ModalSearch v-if="ui.searchBar" />
-			<ModalProfile v-if="ui.profileModal" />
+			<LazyModalMenu v-if="ui.mainMenuOpen" />
+			<LazyModalSearch v-if="ui.searchBar" />
+			<LazyModalProfile v-if="ui.profileModal" />
 		</ModalContainer>
 		<main>
 			<section>
@@ -26,7 +26,7 @@
 	.app-container {
 		display: flex;
 		flex-direction: column;
-		min-height: 100dvh;
+		min-height: 100vh;
 
 		main {
 			flex-grow: 1;

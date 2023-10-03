@@ -33,12 +33,12 @@
 	.loading-container {
 		display: grid;
 		place-items: center;
-		min-height: 40vh;
+		min-height: 100vh;
 	}
 
 	.collection-container {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+		grid-template-columns: repeat(2, minmax(0, 1fr));
 		row-gap: 5vw;
 		column-gap: 3vw;
 		padding-bottom: 5vw;
