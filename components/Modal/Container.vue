@@ -5,10 +5,10 @@
 				@click="handleModalContainerClick"
 				:class="['modal-container', ui.modal ? 'open' : '']"
 			>
-				<button class="icon-button close-x" @click="ui.forceModalClose">
-					<Icon name="mingcute:close-fill" size="21" />
-				</button>
 				<menu-modal>
+					<button class="icon-button close-x" @click="ui.forceModalClose">
+						<Icon name="mingcute:close-fill" size="21" />
+					</button>
 					<div class="modal-content">
 						<slot />
 					</div>
@@ -77,7 +77,7 @@
 		display: block;
 		overflow: hidden;
 		width: 100vw;
-		max-width: 1000px;
+		max-width: 950px;
 		padding: 4rem 3rem;
 		pointer-events: all;
 		position: fixed;

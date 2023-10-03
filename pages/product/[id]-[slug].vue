@@ -2,7 +2,7 @@
 	<detail-page>
 		<ProductDetail :product="product" />
 
-		<ProductMessageForm v-if="user" />
+		<ProductMessageForm v-if="user" :userEmail="user.email" />
 		<div class="login" v-else>
 			<NuxtLink to="/login">
 				Login to contact seller <Icon name="ic:outline-arrow-right-alt" size="21"

@@ -13,7 +13,7 @@
 					<picture class="landscape">
 						<div class="overlay"></div>
 						<img :src="a.img" :alt="a.imgAlt" />
-						<Icon :name="a.icon" size="60" />
+						<Icon :name="a.icon" size="70" />
 					</picture>
 				</article>
 			</article-grid>
@@ -74,6 +74,10 @@
 			border-radius: 1rem;
 			overflow: hidden;
 			position: relative;
+
+			.overlay {
+				opacity: 0.5;
+			}
 
 			svg {
 				position: absolute;
