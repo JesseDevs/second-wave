@@ -89,7 +89,7 @@
 		border: 1px solid var(--color-secondary-20);
 		border-bottom: none;
 		border-radius: 1rem 1rem 0 0;
-		height: 90vh;
+		height: 80vh;
 		transition: 0.3s bottom ease;
 
 		left: 0%;
