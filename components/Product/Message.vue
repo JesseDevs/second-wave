@@ -1,5 +1,5 @@
 <template>
-	<message-card>
+	<message-card v-if="message">
 		<div class="row">
 			<p>{{ message.name }}</p>
 			<p>•</p>

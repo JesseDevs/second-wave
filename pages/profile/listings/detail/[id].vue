@@ -10,7 +10,7 @@
 		<h2 class="strict-voice">Listing: {{ listing.name }}</h2>
 		<ProductListing class="no-buttons" :listing="listing" />
 
-		<message-container>
+		<message-container v-if="messages">
 			<ProductMessage
 				v-if="messages && messages.length > 0"
 				v-for="message in messages"
