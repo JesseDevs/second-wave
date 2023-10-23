@@ -3,7 +3,10 @@
 		<picture class="portrait">
 			<NuxtImg
 				:src="`${config.public.supabase.url}/storage/v1/object/public/images/${listing.image}`"
-				alt="image-from-supadbase"
+				alt="product-image-from-supadbase"
+				quality="30"
+				placeholder
+				preload
 			/>
 		</picture>
 

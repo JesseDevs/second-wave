@@ -2,6 +2,14 @@
 	<section class="hero-landing">
 		<inner-column>
 			<div class="landing">
+				<picture class="landing-img">
+					<NuxtImg
+						src="/images/tidal-wave.jpg"
+						alt="product-image-from-supadbase"
+						quality="30"
+						preload
+					/>
+				</picture>
 				<div class="test">
 					<h1 class="chant-voice back-up">
 						<span>SecondWave:</span>
@@ -31,8 +39,6 @@
 	.landing {
 		position: relative;
 		height: 400px;
-		background: url('/images/tidal-wave.jpg') bottom no-repeat;
-		background-size: cover;
 		transition: transform 0.3s ease;
 		border-radius: 1rem;
 
@@ -44,17 +50,54 @@
 			background-color: transparent;
 		}
 
-		&::before {
-			content: '';
+		.landing-img {
+			aspect-ratio: 3/4;
 			position: absolute;
-			opacity: 0;
 			top: 0;
 			left: 0;
 			width: 100%;
 			height: 100%;
 			background-color: rgba(17, 17, 17, 0.1);
-			border-radius: inherit;
 			transition: opacity 0.5s ease;
+
+			&:before {
+				content: '';
+				position: absolute;
+				background: rgb(78 91 224 /0.3);
+				background: radial-gradient(
+					circle,
+					rgba(72, 140, 176, 0.803) 0%,
+					rgba(166 193 216 /0.3) 90%
+				);
+				left: -1.5rem;
+				top: -1.5rem;
+				width: 50%;
+				height: 50%;
+				border-radius: 1rem;
+				z-index: -1;
+			}
+			&:after {
+				content: '';
+				position: absolute;
+				background: rgb(78 91 224 /0.3);
+				background: radial-gradient(
+					circle,
+					rgba(72, 140, 176, 0.803) 0%,
+					rgba(166 193 216 /0.3) 90%
+				);
+				right: -1.5rem;
+				bottom: -1.5rem;
+				width: 50%;
+				height: 50%;
+				border-radius: 1rem;
+				z-index: -1;
+			}
+			img {
+				object-fit: cover;
+				width: 100%;
+				height: 100%;
+				border-radius: 1rem;
+			}
 		}
 
 		&:hover {
