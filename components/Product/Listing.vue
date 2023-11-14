@@ -1,25 +1,28 @@
 <template>
-	<listing-card>
-		<picture class="portrait">
-			<NuxtImg
-				:src="`${config.public.supabase.url}/storage/v1/object/public/images/${listing.image}`"
-				alt="product-image-from-supadbase"
-				quality="30"
-				placeholder
-				preload
-			/>
-		</picture>
-
-		<text-content class="small-voice">
-			<h3>${{ listing.price }}</h3>
-			<p>{{ listing.name }}</p>
-		</text-content>
-		<listing-buttons>
-			<NuxtLink :to="`/profile/listings/detail/${listing.id}`">View</NuxtLink>
-			<span class="vline"></span>
-			<p @click="emits('deleteClick', listing.id)">Delete</p>
-		</listing-buttons>
-	</listing-card>
+	<div>
+		<listing-card
+			v-for="listing in sortedListings"
+			:key="listing.id"
+			:style="{ 'animation-delay': `${listing.delay}ms` }"
+		>
+			<template v-if="listing.imageLoaded">
+				<picture class="portrait">
+					<NuxtImg
+						:src="`${config.public.supabase.url}/storage/v1/object/public/images/${listing.image}`"
+						alt="product-image-from-supabase"
+						quality="30"
+						placeholder
+						preload
+					/>
+				</picture>
+			</template>
+			<template v-else>
+				<!-- You can use a placeholder image or loading spinner here -->
+				<img src="/placeholder.jpg" alt="Placeholder Image" />
+			</template>
+			<!-- Rest of your listing-card content -->
+		</listing-card>
+	</div>
 </template>
 
 <script setup>
@@ -27,9 +30,37 @@
 		listing: Object,
 	});
 
+	const sortedListings = ref([]);
 	const config = useRuntimeConfig();
-
 	const emits = defineEmits(['deleteClick']);
+
+	const preloadImages = () => {
+		sortedListings.value.forEach((listing, index) => {
+			const img = new Image();
+			img.src = `${config.public.supabase.url}/storage/v1/object/public/images/${listing.image}`;
+			img.onload = () => {
+				// Mark the image as loaded
+				listing.imageLoaded = true;
+			};
+			img.onerror = () => {
+				// Handle error if the image fails to load
+				console.error(`Failed to load image: ${listing.image}`);
+			};
+
+			// Set a small delay for the card based on its position
+			listing.delay = index * 100; // You can adjust the delay as needed
+		});
+	};
+
+	onMounted(() => {
+		// Sort the listings array by createdAt property in descending order
+		sortedListings.value = listings.value.sort(
+			(a, b) => new Date(b.createdAt) - new Date(a.createdAt),
+		);
+
+		// Preload images with a delay
+		preloadImages();
+	});
 </script>
 
 <style lang="scss" scoped>

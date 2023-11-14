@@ -8,6 +8,7 @@
 						alt="product-image-from-supadbase"
 						quality="30"
 						preload
+						loading="eager"
 					/>
 				</picture>
 				<div class="test">
@@ -35,6 +36,10 @@
 	section.hero-landing {
 		padding-top: 8vw;
 		padding-bottom: 10vw;
+		inner-column {
+			padding-left: 3rem;
+			padding-right: 3rem;
+		}
 	}
 	.landing {
 		position: relative;
